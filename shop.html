@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Electronics Components Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="shop.css" />
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="index.html" class="nav-logo">ECG<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="shop.html" class="active">Shop</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="nav-cart-btn" id="openCart">
+    🛒 Cart <span class="cart-count" id="cartCount">0</span>
+  </button>
+</nav>
+
+<!-- ── SHOP HERO ── -->
+<div class="shop-hero">
+  <div class="section-label">// Component Store</div>
+  <h1>Shop <span>Components</span></h1>
+  <p>Genuine electronic components for prototyping, education, and production builds.</p>
+</div>
+
+<!-- ── SHOP LAYOUT ── -->
+<div class="shop-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="shop-sidebar">
+
+    <!-- Search -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Search</div>
+      <input type="text" class="search-input" placeholder="Component name, SKU..." id="searchInput" />
+    </div>
+
+    <!-- Categories -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Category</div>
+      <ul class="category-list">
+        <li><a href="#" class="active" data-cat="all">All Components <span class="count">48</span></a></li>
+        <li><a href="#" data-cat="resistors">Resistors <span class="count">12</span></a></li>
+        <li><a href="#" data-cat="capacitors">Capacitors <span class="count">8</span></a></li>
+        <li><a href="#" data-cat="diodes">Diodes <span class="count">6</span></a></li>
+        <li><a href="#" data-cat="transistors">Transistors <span class="count">5</span></a></li>
+        <li><a href="#" data-cat="leds">LEDs <span class="count">7</span></a></li>
+        <li><a href="#" data-cat="ics">Integrated Circuits <span class="count">4</span></a></li>
+        <li><a href="#" data-cat="sensors">Sensors <span class="count">6</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Price Range -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Price Range</div>
+      <div class="price-range-wrap">
+        <div class="price-labels">
+          GHS <span id="priceMin">0</span> — GHS <span id="priceMax">500</span>
+        </div>
+        <input type="range" min="0" max="500" value="500" id="priceRange" />
+      </div>
+    </div>
+
+    <!-- Availability -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Availability</div>
+      <div class="checkbox-list">
+        <label class="checkbox-item">
+          <input type="checkbox" checked />
+          <span>In Stock</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" />
+          <span>Pre-Order</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" />
+          <span>Include Out of Stock</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Brand -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Brand</div>
+      <div class="checkbox-list">
+        <label class="checkbox-item"><input type="checkbox" checked /><span>Texas Instruments</span></label>
+        <label class="checkbox-item"><input type="checkbox" checked /><span>Vishay</span></label>
+        <label class="checkbox-item"><input type="checkbox" /><span>Murata</span></label>
+        <label class="checkbox-item"><input type="checkbox" /><span>Yageo</span></label>
+        <label class="checkbox-item"><input type="checkbox" /><span>ON Semiconductor</span></label>
+      </div>
+    </div>
+
+    <!-- Rating -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Min. Rating</div>
+      <div class="rating-filter">
+        <label class="rating-row"><input type="radio" name="rating" value="4" /><div class="stars">★★★★☆</div><span>& up</span></label>
+        <label class="rating-row"><input type="radio" name="rating" value="3" /><div class="stars">★★★☆☆</div><span>& up</span></label>
+        <label class="rating-row"><input type="radio" name="rating" value="2" /><div class="stars">★★☆☆☆</div><span>& up</span></label>
+        <label class="rating-row"><input type="radio" name="rating" value="1" checked /><div class="stars">★☆☆☆☆</div><span>& up</span></label>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="shop-main">
+
+    <!-- Toolbar -->
+    <div class="shop-toolbar">
+      <div class="results-count">
+        Showing <strong>48</strong> results
+      </div>
+      <div class="toolbar-right">
+        <select class="sort-select" id="sortSelect">
+          <option>Sort: Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest First</option>
+          <option>Best Rated</option>
+          <option>Most Popular</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" id="gridViewBtn" title="Grid View">⊞</button>
+          <button class="view-btn" id="listViewBtn" title="List View">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="products-area">
+      <div class="products-grid" id="productsGrid">
+
+        <!-- Product 1: Resistor Pack -->
+        <div class="product-card" data-id="1" data-cat="resistors">
+          <span class="product-badge badge-hot">Hot</span>
+          <button class="wishlist-btn" data-id="1">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&q=80" alt="Resistor Pack" />
+            <div class="quick-add" onclick="addToCart(1)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Resistors</div>
+            <div class="product-name">Resistor Variety Pack</div>
+            <div class="product-desc">600-piece assortment, 30 values from 10Ω to 1MΩ, 1/4W, ±5% tolerance</div>
+            <div class="product-specs">
+              <span class="spec-tag">1/4W</span>
+              <span class="spec-tag">±5%</span>
+              <span class="spec-tag">600pcs</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★★</div>
+              <span>(128)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 45</div>
+                <div class="price-old">GHS 60</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(1, 'Resistor Pack', 45)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Ceramic Capacitors -->
+        <div class="product-card" data-id="2" data-cat="capacitors">
+          <span class="product-badge badge-new">New</span>
+          <button class="wishlist-btn" data-id="2">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Capacitors" />
+            <div class="quick-add" onclick="addToCart(2)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Capacitors</div>
+            <div class="product-name">Ceramic Capacitor Kit</div>
+            <div class="product-desc">500-piece ceramic capacitor set, values from 10pF to 100µF with storage box</div>
+            <div class="product-specs">
+              <span class="spec-tag">500V</span>
+              <span class="spec-tag">SMD+THT</span>
+              <span class="spec-tag">500pcs</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★☆</div>
+              <span>(64)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 68</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(2, 'Ceramic Capacitors', 68)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: 1N4148 Diodes -->
+        <div class="product-card" data-id="3" data-cat="diodes">
+          <button class="wishlist-btn" data-id="3">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&q=80" alt="Diodes" />
+            <div class="quick-add" onclick="addToCart(3)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Diodes</div>
+            <div class="product-name">1N4148 Fast Switching Diode ×100</div>
+            <div class="product-desc">Small signal fast switching diode, 100V, 200mA. Standard glass DO-35 package.</div>
+            <div class="product-specs">
+              <span class="spec-tag">100V</span>
+              <span class="spec-tag">200mA</span>
+              <span class="spec-tag">DO-35</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★★</div>
+              <span>(203)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 18</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(3, '1N4148 Diodes ×100', 18)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: NPN Transistors -->
+        <div class="product-card" data-id="4" data-cat="transistors">
+          <span class="product-badge badge-sale">−20%</span>
+          <button class="wishlist-btn" data-id="4">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="Transistors" />
+            <div class="quick-add" onclick="addToCart(4)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Transistors</div>
+            <div class="product-name">BC547 NPN Transistor ×50</div>
+            <div class="product-desc">General purpose NPN BJT, 45V, 100mA. Ideal for amplification and switching.</div>
+            <div class="product-specs">
+              <span class="spec-tag">NPN</span>
+              <span class="spec-tag">45V</span>
+              <span class="spec-tag">TO-92</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★☆</div>
+              <span>(87)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 24</div>
+                <div class="price-old">GHS 30</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(4, 'BC547 Transistors ×50', 24)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: LED Kit -->
+        <div class="product-card" data-id="5" data-cat="leds">
+          <span class="product-badge badge-hot">Hot</span>
+          <button class="wishlist-btn" data-id="5">♡</button>
+          <div class="product-img" style="background:linear-gradient(135deg,#0a0c0f,#1a1228);">
+            <img src="https://images.unsplash.com/photo-1601131166269-3c80d96b3947?w=400&q=80" alt="LEDs" />
+            <div class="quick-add" onclick="addToCart(5)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">LEDs</div>
+            <div class="product-name">5mm LED Assortment ×200</div>
+            <div class="product-desc">200-piece LED assortment: red, green, blue, yellow, white. 5mm diffused and clear.</div>
+            <div class="product-specs">
+              <span class="spec-tag">5mm</span>
+              <span class="spec-tag">5 Colors</span>
+              <span class="spec-tag">200pcs</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★★</div>
+              <span>(156)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 32</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(5, 'LED Assortment ×200', 32)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: Zener Diode Kit -->
+        <div class="product-card" data-id="6" data-cat="diodes">
+          <button class="wishlist-btn" data-id="6">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Zener Diodes" />
+            <div class="quick-add" onclick="addToCart(6)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Diodes</div>
+            <div class="product-name">Zener Diode Kit — 24 Values</div>
+            <div class="product-desc">24 Zener voltages from 2.4V to 33V, 5 of each value, 1/2W, DO-35 glass package.</div>
+            <div class="product-specs">
+              <span class="spec-tag">1/2W</span>
+              <span class="spec-tag">2.4V–33V</span>
+              <span class="spec-tag">120pcs</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★☆</div>
+              <span>(41)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 38</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(6, 'Zener Diode Kit', 38)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: NE555 Timer IC -->
+        <div class="product-card" data-id="7" data-cat="ics">
+          <span class="product-badge badge-new">New</span>
+          <button class="wishlist-btn" data-id="7">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="555 Timer" />
+            <div class="quick-add" onclick="addToCart(7)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Integrated Circuits</div>
+            <div class="product-name">NE555 Timer IC ×10</div>
+            <div class="product-desc">Classic 555 timer for astable, monostable, and bistable applications. DIP-8 package.</div>
+            <div class="product-specs">
+              <span class="spec-tag">DIP-8</span>
+              <span class="spec-tag">5–15V</span>
+              <span class="spec-tag">Texas Inst.</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★★</div>
+              <span>(312)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 22</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(7, 'NE555 Timer IC ×10', 22)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: Temperature Sensor -->
+        <div class="product-card" data-id="8" data-cat="sensors">
+          <button class="wishlist-btn" data-id="8">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&q=80" alt="Temp Sensor" />
+            <div class="quick-add" onclick="addToCart(8)">+ Add to Cart</div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Sensors</div>
+            <div class="product-name">LM35 Temperature Sensor ×5</div>
+            <div class="product-desc">Precision centigrade temperature sensor, −55°C to +150°C, linear 10mV/°C output.</div>
+            <div class="product-specs">
+              <span class="spec-tag">−55°C–150°C</span>
+              <span class="spec-tag">TO-92</span>
+              <span class="spec-tag">Analog</span>
+            </div>
+            <div class="product-rating">
+              <div class="stars">★★★★☆</div>
+              <span>(74)</span>
+            </div>
+            <div class="price-row">
+              <div class="price-wrap">
+                <div class="price">GHS 55</div>
+                <div class="price-old">GHS 65</div>
+              </div>
+              <button class="add-to-cart" onclick="addToCart(8, 'LM35 Sensor ×5', 55)">+</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn">&#8592;</button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn">&#8594;</button>
+      </div>
+    </div>
+  </main>
+</div><!-- /shop-layout -->
+
+<!-- ── CART DRAWER ── -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Cart is empty</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cartTotal">GHS 0</strong>
+    </div>
+    <p class="cart-tax" style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);margin-top:0.25rem;">Taxes &amp; shipping calculated at checkout</p>
+    <button class="checkout-btn" onclick="location.href='checkout.html'">Proceed to Checkout →</button>
+    <span class="continue-shopping" onclick="closeCart()">← Continue Shopping</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">ECG<span>.</span></div>
+  <div class="social-links">
+    <a href="#">𝕏</a><a href="#">in</a><a href="#">gh</a><a href="#">yt</a>
+  </div>
+</footer>
+
+<div class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <a href="index.html" class="bottom-nav-link">🏠<span>Home</span></a>
+    <a href="explore.html" class="bottom-nav-link">🔍<span>Explore</span></a>
+    <a href="shop.html" class="bottom-nav-link active">🛒<span>Shop</span></a>
+    <a href="about.html" class="bottom-nav-link">ℹ️<span>About</span></a>
+  </div>
+</div>
+
+<script>
+/* ── Cart State ── */
+let cart = JSON.parse(localStorage.getItem('ecg-cart') || '[]');
+
+function saveCart() {
+  localStorage.setItem('ecg-cart', JSON.stringify(cart));
+  updateCartCount();
+  renderCartDrawer();
+}
+
+function updateCartCount() {
+  const total = cart.reduce((s, i) => s + i.qty, 0);
+  document.querySelectorAll('#cartCount').forEach(el => el.textContent = total);
+}
+
+function addToCart(id, name, price) {
+  const existing = cart.find(i => i.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ id, name, price, qty: 1 });
+  }
+  saveCart();
+  openCart();
+}
+
+function renderCartDrawer() {
+  const container = document.getElementById('cartItems');
+  const footer = document.getElementById('cartFooter');
+
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Cart is empty</p>
+      </div>`;
+    footer.style.display = 'none';
+    return;
+  }
+
+  footer.style.display = 'block';
+  let total = 0;
+
+  container.innerHTML = cart.map(item => {
+    total += item.price * item.qty;
+    return `
+      <div class="cart-item">
+        <div class="cart-item-img">
+          <img src="https://via.placeholder.com/40/111418/00c8ff?text=${encodeURIComponent(item.name.charAt(0))}" alt="${item.name}"/>
+        </div>
+        <div>
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">GHS ${item.price}</div>
+        </div>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+          <input class="qty-num" type="text" value="${item.qty}" readonly />
+          <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+        </div>
+      </div>`;
+  }).join('');
+
+  document.getElementById('cartTotal').textContent = `GHS ${total}`;
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+  saveCart();
+}
+
+function openCart() {
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  renderCartDrawer();
+}
+
+function closeCart() {
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+
+document.getElementById('openCart').addEventListener('click', openCart);
+
+/* ── View Toggle ── */
+const grid = document.getElementById('productsGrid');
+document.getElementById('gridViewBtn').addEventListener('click', function() {
+  grid.classList.remove('list-view');
+  this.classList.add('active');
+  document.getElementById('listViewBtn').classList.remove('active');
+});
+document.getElementById('listViewBtn').addEventListener('click', function() {
+  grid.classList.add('list-view');
+  this.classList.add('active');
+  document.getElementById('gridViewBtn').classList.remove('active');
+});
+
+/* ── Category Filter ── */
+document.querySelectorAll('.category-list a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelectorAll('.category-list a').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+    const cat = this.dataset.cat;
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  });
+});
+
+/* ── Search ── */
+document.getElementById('searchInput').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('.product-card').forEach(card => {
+    const name = card.querySelector('.product-name').textContent.toLowerCase();
+    const desc = card.querySelector('.product-desc').textContent.toLowerCase();
+    card.style.display = (name.includes(q) || desc.includes(q)) ? '' : 'none';
+  });
+});
+
+/* ── Price Range ── */
+document.getElementById('priceRange').addEventListener('input', function() {
+  document.getElementById('priceMax').textContent = this.value;
+});
+
+/* ── Wishlist ── */
+document.querySelectorAll('.wishlist-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.classList.toggle('active');
+    this.textContent = this.classList.contains('active') ? '♥' : '♡';
+  });
+});
+
+/* ── Pagination ── */
+document.querySelectorAll('.page-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+    if (!['←','→','‹','›'].some(ch => this.textContent.includes(ch))) {
+      this.classList.add('active');
+    }
+  });
+});
+
+/* ── Init ── */
+updateCartCount();
+renderCartDrawer();
+</script>
+</body>
+</html>

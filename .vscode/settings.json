@@ -1,0 +1,7 @@
+{
+  "github.copilot.enable": false,
+  "github.copilot.experimental.enabled": false,
+  "github.pullRequests.enabled": false,
+  "github.issue.enabled": false,
+  "git.autofetch": false
+}

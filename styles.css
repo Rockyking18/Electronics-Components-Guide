@@ -1,0 +1,723 @@
+/* ELECTRONICS COMPONENTS GUIDE — MAIN STYLES
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --bg-dark:      #0a0c0f;
+  --bg-card:      #111418;
+  --bg-surface:   #181c22;
+  --border:       #232830;
+  --border-glow:  #1e4a6e;
+  --cyan:         #00c8ff;
+  --cyan-dim:     #0099cc;
+  --cyan-glow:    rgba(0, 200, 255, 0.15);
+  --white:        #f0f4f8;
+  --muted:        #8899aa;
+  --text:         #ccd6e0;
+  --danger:       #ff4d6d;
+  --success:      #00e676;
+  --font-display: 'Rajdhani', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+/*body {
+  font-family: var(--font-body);
+  background: var(--bg-dark);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}*/
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border-glow); border-radius: 2px; }
+
+/* ── NAVIGATION ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 60px;
+  background:transparent;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-logo span { color:cyan; }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: transparent;
+  transition: width 0.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--cyan); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+.nav-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border:1px solid black;
+  color: black;
+  font-size: 0.75rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+
+.nav-cart-btn:hover {
+  background: var(--cyan-glow);
+  border-color: var(--cyan);
+}
+
+.cart-count {
+  background: white;
+  color: black;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('file:///C:/Users/HP%20ELITEBOOK/Downloads/harrison-broadbent-afZVP8xbbw0-unsplash.jpg') center/cover no-repeat;
+  filter: brightness(0.7) saturate(0.8);
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* Scanline overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 8rem 2.5rem 4rem;
+}
+
+.hero-tag {
+  font-size: 0.9rem;
+  font-style: Poppins, sans-serif;
+  color: white;
+  letter-spacing: 3px;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--cyan);
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: rgba(80, 106, 226, 0.719);
+  margin-bottom: 0.2rem;
+}
+
+.hero h1 span { color: white; }
+
+.hero p {
+  font-size: 1rem;
+  color: white;
+  max-width: 480px;
+  margin: 1.2rem 0 2.2rem;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  font-style: Roboto Mono, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  background: white;
+  color:black;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #0c1314;
+  color: white;
+  box-shadow: 0 0 30px rgba(0,200,255,0.4);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  background: transparent;
+  border-radius: 20px;
+  color: white;
+  border: 1px solid white;
+  padding: 0.85rem 2.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background:black;
+  border: #0a0c0f;
+}
+
+.btn-outline-cta {
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+
+.button-group {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ── SECTION BASICS ── */
+section { padding: 5rem 2.5rem; }
+
+.section-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* ── WHAT ARE ELECTRONICS SECTION ── */
+.what-section {
+  display: grid;
+  color: white;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.what-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('file:///C:/Users/HP%20ELITEBOOK/Downloads/harrison-broadbent-afZVP8xbbw0-unsplash.jpg') center/cover no-repeat;
+  background-size: cover;
+  filter: blur(25px);
+  transform: scale(1.25);
+  z-index: -2;
+}
+
+.what-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.what-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.what-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75) saturate(0.7);
+}
+
+.what-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--border-glow);
+  z-index: 1;
+}
+
+.what-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.what-text p { color: white; line-height: 1.8; margin-bottom: 1rem; }
+
+.carousel-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-btn {
+  width: 36px; height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.carousel-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ── WHY STUDY SECTION ── */
+.why-section {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('file:///C:/Users/HP%20ELITEBOOK/Downloads/harrison-broadbent-afZVP8xbbw0-unsplash.jpg') center/cover no-repeat;
+  background-size: cover;
+  filter: blur(25px);
+  transform: scale(1.25);
+  z-index: -2;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.why-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  padding: 2rem 1.5rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--cyan);
+  transition: height 0.3s;
+}
+
+.why-card:hover { color:black; }
+.why-card:hover::before { height: 100%; }
+
+.why-num {
+  font-size: 3rem;
+  font-weight: 900;
+  font-style: oblique  15deg Poppins, sans-serif;
+  color:white;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.why-card h4 {
+  font-size: 1rem;
+  color:white;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.why-card p { font-size: 0.85rem; color: white; align-items: center; font-style: Poppins, sans-serif; }
+
+/* ── COMPONENT THUMBNAIL STRIP ── */
+.component-strip {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1.5rem 2.5rem;
+  background: transparent;
+  overflow-x: auto;
+  align-items: center;
+}
+
+.component-thumb {
+  flex: 0 0 64px;
+  height: 64px;
+  background:transparent ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.component-thumb:hover {
+  border-color: var(--cyan);
+  box-shadow: inset 0 0 12px var(--cyan-glow);
+}
+
+.component-thumb img {
+  width: 40px; height: 40px;
+  object-fit: contain;
+  filter: brightness(0.8) saturate(0.5);
+}
+
+/* ── BOTTOM NAV ── */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(10, 12, 15, 0.97);
+  border-top: 1px solid var(--border);
+  padding: 0.75rem 2rem;
+  z-index: 100;
+}
+
+.bottom-nav-inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.bottom-nav-link.active,
+.bottom-nav-link:hover { color: var(--cyan); }
+
+/* ── FOOTER ── */
+footer {
+  background: white;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.footer-logo span { color: var(--cyan); }
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 32px; height: 32px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.social-links a:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ── EXPLORE / COMPONENTS PAGE ── */
+.explore-hero {
+  padding: 8rem 2.5rem 3rem;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.explore-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.explore-hero h1 span { color: var(--cyan); }
+
+.filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: var(--cyan-glow);
+}
+
+/* ── COMPONENT CARDS ── */
+.components-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.component-card {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  align-items: start;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-dark);
+  transition: background 0.2s;
+}
+
+.component-card:hover { background: var(--bg-card); }
+
+.component-card-img {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.component-card-img img {
+  width: 80%; height: 80%;
+  object-fit: contain;
+  filter: brightness(0.85) saturate(0.5);
+}
+
+.component-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.component-card:hover .component-card-img::after {
+  border-color: var(--border-glow);
+}
+
+.component-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.component-card-body .desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  max-width: 560px;
+}
+
+.component-card-body .uses,
+.component-card-body .projects {
+  margin-bottom: 0.75rem;
+}
+
+.component-card-body h5 {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+}
+
+.component-card-body ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.component-card-body ul li {
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+}
+
+.learn-more-btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  border: 1px solid var(--border-glow);
+  background: transparent;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  transition: all 0.2s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.learn-more-btn:hover {
+  background: var(--cyan-glow);
+  border-color: var(--cyan);
+}
+
+/* ── UTILITY ── */
+.container { max-width: 1200px; margin: 0 auto; }
+.text-cyan { color: var(--cyan); }
+.text-muted { color: var(--muted); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .what-section { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .component-card { grid-template-columns: 120px 1fr; }
+  .component-card > .learn-more-btn { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  nav { padding: 0 1.2rem; }
+  section { padding: 3.5rem 1.2rem; }
+  .why-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .bottom-nav { display: block; }
+  body { padding-bottom: 60px; }
+  .component-card { grid-template-columns: 1fr; }
+}
