@@ -77,22 +77,10 @@ nav {
   text-decoration: none;
   letter-spacing: 1.5px;
   transition: color 0.2s;
-  position: relative;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0; height: 1px;
-  background: transparent;
-  transition: width 0.25s;
 }
 
 .nav-links a:hover,
 .nav-links a.active { color: var(--cyan); }
-.nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
 
 .nav-cart-btn {
   display: flex;

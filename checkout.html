@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout — Electronics Components Guide</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="shop.css" />
+  <link rel="stylesheet" href="checkout.css" />
 </head>
 <body>
 
@@ -24,45 +24,43 @@
   <!-- ── LEFT: FORM ── -->
   <div class="checkout-form-section">
 
-    <!-- Progress -->
-    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:2rem;">
-      <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--cyan);text-transform:uppercase;letter-spacing:2px;">Contact</span>
-      <div style="flex:1;height:1px;background:var(--border);"></div>
-      <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;">Shipping</span>
-      <div style="flex:1;height:1px;background:var(--border);"></div>
-      <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;">Payment</span>
+    <!-- Progress Steps -->
+    <div class="checkout-progress">
+      <span class="progress-step active">Contact</span>
+      <span class="progress-step">Shipping</span>
+      <span class="progress-step">Payment</span>
     </div>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <h2>Contact Information</h2>
     <div class="form-group">
       <label class="form-label">Email Address</label>
-      <input type="email" class="form-input" placeholder="you@example.com" />
+      <input type="email" class="form-input" placeholder="your.email@example.com" />
     </div>
     <div class="form-group">
       <label class="form-label">Phone Number</label>
-      <input type="tel" class="form-input" placeholder="+233 (0) 00 000 0000" />
+      <input type="tel" class="form-input" placeholder="+233 20 123 4567" />
     </div>
 
-    <!-- Shipping -->
+    <!-- Shipping Address Section -->
     <h2 style="margin-top:2.5rem;">Shipping Address</h2>
     <div class="form-row">
       <div class="form-group">
         <label class="form-label">First Name</label>
-        <input type="text" class="form-input" placeholder="Kwame" />
+        <input type="text" class="form-input" placeholder="John" />
       </div>
       <div class="form-group">
         <label class="form-label">Last Name</label>
-        <input type="text" class="form-input" placeholder="Mensah" />
+        <input type="text" class="form-input" placeholder="Smith" />
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label">Address Line 1</label>
-      <input type="text" class="form-input" placeholder="Street, House No." />
+      <label class="form-label">Address</label>
+      <input type="text" class="form-input" placeholder="123 Main Street" />
     </div>
     <div class="form-group">
-      <label class="form-label">Address Line 2 (Optional)</label>
-      <input type="text" class="form-input" placeholder="Apartment, Suite, etc." />
+      <label class="form-label">Apartment, suite, etc. (optional)</label>
+      <input type="text" class="form-input" placeholder="Apt 4B" />
     </div>
     <div class="form-row">
       <div class="form-group">
@@ -71,7 +69,7 @@
       </div>
       <div class="form-group">
         <label class="form-label">Region</label>
-        <select class="form-input" style="cursor:pointer;">
+        <select class="form-input">
           <option>Greater Accra</option>
           <option>Ashanti</option>
           <option>Western</option>
@@ -86,55 +84,49 @@
       </div>
     </div>
 
-    <!-- Shipping Method -->
+    <!-- Shipping Method Section -->
     <h2 style="margin-top:2.5rem;">Shipping Method</h2>
-    <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
-      <label style="display:flex;align-items:center;justify-content:space-between;padding:1rem;background:var(--bg-card);border:1px solid var(--cyan);cursor:pointer;">
-        <div style="display:flex;align-items:center;gap:0.75rem;">
-          <input type="radio" name="shipping" checked />
-          <div>
-            <div style="font-family:var(--font-display);color:var(--white);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.5px;">Standard Delivery</div>
-            <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);">3–5 business days</div>
-          </div>
+    <div class="shipping-options">
+      <label class="shipping-option selected">
+        <input type="radio" name="shipping" checked />
+        <div class="option-content">
+          <div class="option-name">Standard Delivery</div>
+          <div class="option-desc">3–5 business days</div>
         </div>
-        <span style="font-family:var(--font-display);color:var(--white);font-size:1rem;">GHS 15</span>
+        <span class="option-price">GHS 15</span>
       </label>
 
-      <label style="display:flex;align-items:center;justify-content:space-between;padding:1rem;background:var(--bg-card);border:1px solid var(--border);cursor:pointer;">
-        <div style="display:flex;align-items:center;gap:0.75rem;">
-          <input type="radio" name="shipping" />
-          <div>
-            <div style="font-family:var(--font-display);color:var(--white);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.5px;">Express Delivery</div>
-            <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);">1–2 business days</div>
-          </div>
+      <label class="shipping-option">
+        <input type="radio" name="shipping" />
+        <div class="option-content">
+          <div class="option-name">Express Delivery</div>
+          <div class="option-desc">1–2 business days</div>
         </div>
-        <span style="font-family:var(--font-display);color:var(--white);font-size:1rem;">GHS 40</span>
+        <span class="option-price">GHS 40</span>
       </label>
 
-      <label style="display:flex;align-items:center;justify-content:space-between;padding:1rem;background:var(--bg-card);border:1px solid var(--border);cursor:pointer;">
-        <div style="display:flex;align-items:center;gap:0.75rem;">
-          <input type="radio" name="shipping" />
-          <div>
-            <div style="font-family:var(--font-display);color:var(--white);font-size:0.95rem;text-transform:uppercase;letter-spacing:0.5px;">Pickup In-Store</div>
-            <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);">Ready in 2 hours — Accra Mall</div>
-          </div>
+      <label class="shipping-option">
+        <input type="radio" name="shipping" />
+        <div class="option-content">
+          <div class="option-name">Pickup In-Store</div>
+          <div class="option-desc">Ready in 2 hours</div>
         </div>
-        <span style="font-family:var(--font-display);color:var(--cyan);font-size:1rem;">FREE</span>
+        <span class="option-price free">FREE</span>
       </label>
     </div>
 
-    <!-- Payment -->
-    <h2>Payment</h2>
-    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;">
-      <button class="filter-chip active">Card</button>
-      <button class="filter-chip">Mobile Money</button>
-      <button class="filter-chip">Bank Transfer</button>
+    <!-- Payment Section -->
+    <h2 style="margin-top:2.5rem;">Payment Method</h2>
+    <div class="payment-tabs">
+      <button class="payment-tab active" data-method="card">Card</button>
+      <button class="payment-tab" data-method="mobile">Mobile Money</button>
+      <button class="payment-tab" data-method="bank">Bank Transfer</button>
     </div>
 
-    <div id="cardPayment">
+    <div id="cardPayment" class="payment-method">
       <div class="form-group">
         <label class="form-label">Card Number</label>
-        <input type="text" class="form-input" placeholder="0000 0000 0000 0000" maxlength="19" id="cardNum" />
+        <input type="text" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19" id="cardNum" />
       </div>
       <div class="form-row">
         <div class="form-group">
@@ -143,27 +135,27 @@
         </div>
         <div class="form-group">
           <label class="form-label">CVV</label>
-          <input type="text" class="form-input" placeholder="•••" maxlength="4" />
+          <input type="text" class="form-input" placeholder="123" maxlength="4" />
         </div>
       </div>
       <div class="form-group">
         <label class="form-label">Name on Card</label>
-        <input type="text" class="form-input" placeholder="As printed on card" />
+        <input type="text" class="form-input" placeholder="John Smith" />
       </div>
     </div>
 
-    <!-- Promo -->
-    <div style="display:flex;gap:0.75rem;margin:1.5rem 0;">
-      <input type="text" class="form-input" placeholder="Promo code" style="flex:1;" />
-      <button class="btn-outline" style="padding:0.75rem 1.5rem;white-space:nowrap;">Apply</button>
+    <!-- Promo Code -->
+    <div class="promo-section">
+      <input type="text" class="form-input" placeholder="Promo code" />
+      <button class="btn-apply">Apply</button>
     </div>
 
-    <button class="checkout-btn" style="width:100%;padding:1.1rem;margin-top:0.5rem;" onclick="placeOrder()">
+    <button class="checkout-btn" onclick="placeOrder()" style="width:100%;">
       Place Order — <span id="finalTotal">GHS 0</span>
     </button>
 
-    <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);text-align:center;margin-top:1rem;letter-spacing:1px;">
-      🔒 256-bit SSL encryption · Your payment is secure
+    <p class="security-note">
+      Your payment is secure and encrypted
     </p>
 
   </div>
@@ -173,16 +165,16 @@
     <h3>Order Summary</h3>
     <div id="orderLines"></div>
     <div class="order-total">
-      <span>Total</span>
+      <span>Subtotal</span>
       <strong id="summaryTotal">GHS 0</strong>
     </div>
-    <div style="margin-top:1rem;padding:0.75rem;background:var(--bg-card);border:1px solid var(--border);">
-      <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.4rem;">Shipping</div>
-      <div style="font-size:0.83rem;color:var(--muted);">Calculated at next step</div>
+    <div class="summary-section">
+      <div class="section-label">Shipping</div>
+      <div class="section-value">Calculated at next step</div>
     </div>
-    <div style="margin-top:1rem;padding:0.75rem;background:rgba(0,230,118,0.05);border:1px solid rgba(0,230,118,0.2);">
-      <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--success);letter-spacing:2px;text-transform:uppercase;margin-bottom:0.4rem;">✓ Free returns</div>
-      <div style="font-size:0.78rem;color:var(--muted);">30-day no-questions-asked returns policy</div>
+    <div class="summary-section highlight">
+      <div class="section-label">Free Returns</div>
+      <div class="section-value">30-day policy</div>
     </div>
   </div>
 
@@ -191,7 +183,7 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-logo">ECG<span>.</span></div>
-  <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;">
+  <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--muted);letter-spacing:0.5px;">
     Secure Checkout
   </div>
 </footer>
@@ -204,7 +196,7 @@
     let subtotal = 0;
 
     if (cart.length === 0) {
-      lines.innerHTML = '<p style="font-size:0.83rem;color:var(--muted);padding:0.5rem 0;">No items in cart. <a href="shop.html" style="color:var(--cyan);">Go shop →</a></p>';
+      lines.innerHTML = '<p style="font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">No items in cart. <a href="shop.html" style="color:var(--cyan);">Go shop →</a></p>';
     } else {
       lines.innerHTML = cart.map(item => {
         subtotal += item.price * item.qty;
@@ -221,7 +213,7 @@
   }
 
   function placeOrder() {
-    alert('✓ Order placed! Thank you for shopping with Electronics Components Guide.');
+    alert('Order placed! Thank you for shopping with us.');
     localStorage.removeItem('ecg-cart');
     window.location.href = 'index.html';
   }
@@ -232,23 +224,24 @@
   });
 
   // Payment method tabs
-  document.querySelectorAll('.filter-chip').forEach(btn => {
+  document.querySelectorAll('.payment-tab').forEach(btn => {
     btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.payment-tab').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
     });
   });
 
-  // Shipping radio border
+  // Shipping option selection
   document.querySelectorAll('input[name="shipping"]').forEach(radio => {
     radio.addEventListener('change', function() {
-      document.querySelectorAll('label[style*="border"]').forEach(l => {
-        l.style.borderColor = 'var(--border)';
+      document.querySelectorAll('.shipping-option').forEach(opt => {
+        opt.classList.remove('selected');
       });
-      this.closest('label').style.borderColor = 'var(--cyan)';
+      this.closest('.shipping-option').classList.add('selected');
     });
   });
 
+  // Initialize
   renderOrder();
 </script>
 </body>

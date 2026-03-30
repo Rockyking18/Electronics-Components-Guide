@@ -1,0 +1,338 @@
+/* CHECKOUT PAGE STYLES */
+
+/* ── CHECKOUT LAYOUT ── */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 7rem 2.5rem 4rem;
+  min-height: 70vh;
+}
+
+/* ── PROGRESS INDICATOR ── */
+.checkout-progress {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.progress-step {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.progress-step.active {
+  color: var(--cyan);
+}
+
+/* ── FORM SECTION ── */
+.checkout-form-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1.25rem 0;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.form-input:focus {
+  border-color: var(--cyan);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── SHIPPING OPTIONS ── */
+.shipping-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.shipping-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shipping-option:hover {
+  border-color: var(--cyan);
+}
+
+.shipping-option.selected {
+  border-color: var(--cyan);
+  background: rgba(0, 200, 255, 0.05);
+}
+
+.shipping-option input[type="radio"] {
+  cursor: pointer;
+  margin-right: 0.75rem;
+}
+
+.option-content {
+  flex: 1;
+}
+
+.option-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.option-desc {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.option-price {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.option-price.free {
+  color: var(--success);
+}
+
+/* ── PAYMENT TABS ── */
+.payment-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-tab {
+  flex: 1;
+  padding: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-tab:hover {
+  border-color: var(--cyan);
+}
+
+.payment-tab.active {
+  background: rgba(0, 200, 255, 0.1);
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.payment-method {
+  display: block;
+}
+
+/* ── PROMO & CHECKOUT ── */
+.promo-section {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.btn-apply {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.btn-apply:hover {
+  background: rgba(0, 200, 255, 0.1);
+  border-color: var(--cyan);
+}
+
+.security-note {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ── ORDER SUMMARY ── */
+.order-summary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 80px;
+}
+
+.order-summary h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.order-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-line .name {
+  color: var(--muted);
+}
+
+.order-line .amount {
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding: 1rem 0 0 0;
+  margin-top: 1rem;
+  border-top: 2px solid var(--border);
+}
+
+.order-total span {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.order-total strong {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
+.summary-section {
+  padding: 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+}
+
+.summary-section.highlight {
+  background: rgba(0, 230, 118, 0.05);
+  border-color: rgba(0, 230, 118, 0.2);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.summary-section.highlight .section-label {
+  color: var(--success);
+}
+
+.section-value {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .order-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-layout {
+    padding: 7rem 1.5rem 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
