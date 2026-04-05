@@ -47,9 +47,9 @@ nav {
 .nav-links a:hover { color: #666; }
 
 .nav-cart-btn {
-  background: #d4c9be;
-  border: 1px solid #c0b5aa;
-  color: #333;
+  background: #ffffff;
+  border: 1px solid #1a1919;
+  color: #070202;
 }
 
 .nav-cart-btn:hover {
@@ -59,8 +59,8 @@ nav {
 }
 
 .cart-count {
-  background: #555;
-  color: white;
+  background:transparent;
+  color: rgb(14, 4, 4);
 }
 
 /* Hero section */
