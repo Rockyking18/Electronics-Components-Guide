@@ -1,84 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore Components — Electronics Guide</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="explore.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Components — Electronics Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="explore.css" />
+  </head>
+  <body>
+    <!-- ── NAVIGATION ── -->
+    <nav>
+      <a href="index.html" class="nav-logo">ECG<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html" class="active">Explore</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <a href="shop.html" class="nav-cart-btn">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </nav>
+    <br />
 
-<!-- ── NAVIGATION ── -->
-<nav>
-  <a href="index.html" class="nav-logo">ECG<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="explore.html" class="active">Explore</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-  <a href="shop.html" class="nav-cart-btn">
-    🛒 Cart <span class="cart-count" id="cartCount">0</span>
-  </a>
-</nav>
-
-<!-- ── HERO ── -->
-<!--<div class="explore-hero">
-  <h1>Electronic <span>Components</span></h1>
-  <p class="explore-subtitle">Learn how each component works, what it's used for, and explore related projects.</p>
-
-  <div class="filter-bar">
-    <button class="filter-chip active">All</button>
-    <button class="filter-chip">Passive</button>
-    <button class="filter-chip">Active</button>
-    <button class="filter-chip">Semiconductors</button>
-    <button class="filter-chip">Sensors</button>
-    <button class="filter-chip">Microcontrollers</button>
-    <button class="filter-chip">Power</button>
-  </div>
-</div>--!>
-
-<!-- ── COMPONENT CARDS ── -->
-<div class="components-grid">
-
-  <!-- Resistor -->
-  <div class="component-card">
-    <div class="component-card-img" data-label="Resistor">
-      <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=300&q=80" alt="Resistor" />
-    </div>
-    <div class="component-card-body">
-      <h3>Resistor</h3>
-      <p class="desc">
-        A passive electrical component that limits or regulates the flow of electrical current. Resistors
-        are fundamental to circuit design, controlling voltage and current levels across a wide range of applications.
-      </p>
-      <div class="uses">
-        <h5>Uses</h5>
-        <ul>
-          <li>Current limiting</li>
-          <li>Voltage division</li>
-          <li>Signal attenuation</li>
-          <li>Pull-up/down</li>
-        </ul>
-      </div>
-      <div class="projects">
-        <h5>Projects</h5>
-        <ul>
-          <li>LED driver circuits</li>
-          <li>Sensor interfaces</li>
-          <li>Amplifier biasing</li>
-        </ul>
+    <!-- ── EXPLORE HERO ── -->
+    <div class="explore-hero">
+      <div class="filter-bar">
+        <div class="filter-dropdown">
+          <button class="filter-btn">
+            Filter <span class="dropdown-arrow">▼</span>
+          </button>
+          <div class="filter-menu">
+            <button class="filter-option active" data-filter="all">All</button>
+            <button class="filter-option" data-filter="resistors">
+              Resistors
+            </button>
+            <button class="filter-option" data-filter="diodes">Diodes</button>
+            <button class="filter-option" data-filter="leds">LEDs</button>
+            <button class="filter-option" data-filter="oscillators">
+              Oscillators
+            </button>
+            <button class="filter-option" data-filter="transformers">
+              Transformers
+            </button>
+            <button class="filter-option" data-filter="batteries">
+              Batteries
+            </button>
+          </div>
+        </div>
+        <span class="filter-value">All</span>
+        <input type="text" class="quick-search" placeholder="Quick Search" />
       </div>
     </div>
-    <div>
-      <a href="#" class="learn-more-btn">Learn More →</a>
-      <a href="shop.html?category=resistors" class="learn-more-btn">Shop →</a>
-    </div>
-  </div>
 
-  <!-- Zener Diode -->
-  <div class="component-card">
+    <!-- ── COMPONENT CARDS ── -->
+    <div class="components-grid">
+      <!-- Resistor -->
+      <div class="component-card">
+        <div class="grid1">
+          <div class="component-card-img">
+            <h3>Resistor</h3>
+            <img src="./imgs/resistor.png" alt="Resistor" />
+          </div>
+
+          <div class="uses">
+            <h5>Uses</h5>
+            <ul>
+              <li>Current limiting</li>
+              <li>Voltage division</li>
+              <li>Signal attenuation</li>
+              <li>Pull-up/down</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="discrip">
+            <h5>Discription</h5>
+            <p class="desc">
+              A passive electrical component that limits or regulates the flow
+              of electrical current. Resistors are fundamental to circuit
+              design, controlling voltage and current levels across a wide range
+              of applications.
+            </p>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <h5>Projects</h5>
+              <ul>
+                <li>LED driver circuits</li>
+                <li>Sensor interfaces</li>
+                <li>Amplifier biasing</li>
+              </ul>
+            </div>
+            <div class="btnsss">
+              <a href="#" class="learn-more-btn">Learn More →</a>
+              <a href="shop.html?category=resistors" class="learn-more-btn"
+                >Shop →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zener Diode -->
+      <!-- <div class="component-card">
     <div class="component-card-img" data-label="Zener Diode">
       <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=300&q=80" alt="Zener Diode" />
     </div>
@@ -109,10 +136,10 @@
       <a href="#" class="learn-more-btn">Learn More →</a>
       <a href="shop.html?category=diodes" class="learn-more-btn">Shop →</a>
     </div>
-  </div>
+  </div> -->
 
-  <!-- LED -->
-  <div class="component-card">
+      <!-- LED -->
+      <!-- <div class="component-card">
     <div class="component-card-img led" data-label="LED (Light Emitting Diode)">
       <img src="https://images.unsplash.com/photo-1601131166269-3c80d96b3947?w=300&q=80" alt="LED" />
     </div>
@@ -144,10 +171,10 @@
       <a href="#" class="learn-more-btn">Learn More →</a>
       <a href="shop.html?category=leds" class="learn-more-btn">Shop →</a>
     </div>
-  </div>
+  </div> -->
 
-  <!-- Crystal Oscillator -->
-  <div class="component-card">
+      <!-- Crystal Oscillator -->
+      <!-- <div class="component-card">
     <div class="component-card-img" data-label="Crystal Oscillator">
       <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&q=80" alt="Crystal Oscillator" />
     </div>
@@ -178,10 +205,10 @@
       <a href="#" class="learn-more-btn">Learn More →</a>
       <a href="shop.html?category=oscillators" class="learn-more-btn">Shop →</a>
     </div>
-  </div>
+  </div> -->
 
-  <!-- Transformer -->
-  <div class="component-card">
+      <!-- Transformer -->
+      <!-- <div class="component-card">
     <div class="component-card-img" data-label="Transformer">
       <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&q=80" alt="Transformer" />
     </div>
@@ -212,10 +239,10 @@
       <a href="#" class="learn-more-btn">Learn More →</a>
       <a href="shop.html?category=transformers" class="learn-more-btn">Shop →</a>
     </div>
-  </div>
+  </div> -->
 
-  <!-- Battery -->
-  <div class="component-card">
+      <!-- Battery -->
+      <!-- <div class="component-card">
     <div class="component-card-img" data-label="Battery">
       <img src="https://images.unsplash.com/photo-1556740722-a3ee986b1f04?w=300&q=80" alt="Battery" />
     </div>
@@ -246,42 +273,63 @@
       <a href="#" class="learn-more-btn">Learn More →</a>
       <a href="shop.html?category=batteries" class="learn-more-btn">Shop →</a>
     </div>
-  </div>
+  </div> -->
+    </div>
 
-</div>
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="footer-logo">ECG<span>.</span></div>
+      <div class="social-links">
+        <a href="#">𝕏</a><a href="#">in</a><a href="#">gh</a><a href="#">yt</a>
+      </div>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-logo">ECG<span>.</span></div>
-  <div class="social-links">
-    <a href="#">𝕏</a><a href="#">in</a><a href="#">gh</a><a href="#">yt</a>
-  </div>
-</footer>
+      <div class="bottom-nav">
+        <div class="bottom-nav-inner">
+          <a href="index.html" class="bottom-nav-link">🏠<span>Home</span></a>
+          <a href="explore.html" class="bottom-nav-link active"
+            >🔍<span>Explore</span></a
+          >
+          <a href="shop.html" class="bottom-nav-link">🛒<span>Shop</span></a>
+          <a href="about.html" class="bottom-nav-link">ℹ️<span>About</span></a>
+        </div>
+      </div>
+    </footer>
 
-<div class="bottom-nav">
-  <div class="bottom-nav-inner">
-    <a href="index.html" class="bottom-nav-link">🏠<span>Home</span></a>
-    <a href="explore.html" class="bottom-nav-link active">🔍<span>Explore</span></a>
-    <a href="shop.html" class="bottom-nav-link">🛒<span>Shop</span></a>
-    <a href="about.html" class="bottom-nav-link">ℹ️<span>About</span></a>
-  </div>
-</div>
+    <script>
+      // Filter dropdown
+      const filterBtn = document.querySelector(".filter-btn");
+      const filterDropdown = document.querySelector(".filter-dropdown");
+      const filterOptions = document.querySelectorAll(".filter-option");
+      const filterValue = document.querySelector(".filter-value");
 
-<script>
-  // Filter chips
-  document.querySelectorAll('.filter-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+      filterBtn.addEventListener("click", () => {
+        filterDropdown.classList.toggle("open");
+      });
 
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('ecg-cart') || '[]');
-    const total = cart.reduce((s, i) => s + (i.qty || 1), 0);
-    document.querySelectorAll('#cartCount').forEach(el => el.textContent = total);
-  }
-  updateCartCount();
-</script>
-</body>
+      filterOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          filterOptions.forEach((o) => o.classList.remove("active"));
+          option.classList.add("active");
+          filterValue.textContent = option.textContent;
+          filterDropdown.classList.remove("open");
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!filterDropdown.contains(e.target)) {
+          filterDropdown.classList.remove("open");
+        }
+      });
+
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("ecg-cart") || "[]");
+        const total = cart.reduce((s, i) => s + (i.qty || 1), 0);
+        document
+          .querySelectorAll("#cartCount")
+          .forEach((el) => (el.textContent = total));
+      }
+      updateCartCount();
+    </script>
+  </body>
 </html>
