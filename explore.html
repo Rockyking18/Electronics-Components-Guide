@@ -24,38 +24,42 @@
     <br />
 
     <!-- ── EXPLORE HERO ── -->
-    <div class="explore-hero">
-      <div class="filter-bar">
-        <div class="filter-dropdown">
-          <button class="filter-btn">
-            Filter <span class="dropdown-arrow">▼</span>
-          </button>
-          <div class="filter-menu">
-            <button class="filter-option active" data-filter="all">All</button>
-            <button class="filter-option" data-filter="resistors">
-              Resistors
-            </button>
-            <button class="filter-option" data-filter="diodes">Diodes</button>
-            <button class="filter-option" data-filter="leds">LEDs</button>
-            <button class="filter-option" data-filter="oscillators">
-              Oscillators
-            </button>
-            <button class="filter-option" data-filter="transformers">
-              Transformers
-            </button>
-            <button class="filter-option" data-filter="batteries">
-              Batteries
-            </button>
-          </div>
-        </div>
-        <span class="filter-value">All</span>
-        <input type="text" class="quick-search" placeholder="Quick Search" />
-      </div>
-    </div>
+    <div class="explore-hero"></div>
 
     <!-- ── COMPONENT CARDS ── -->
-    <div class="components-grid">
+    <div>
+      <div class="filter-bar">
+        <div class="filter-left">
+          <div class="filter-dropdown">
+            <button class="filter-btn">
+              Filter <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="filter-menu">
+              <button class="filter-option active" data-filter="all">
+                All
+              </button>
+              <button class="filter-option" data-filter="resistors">
+                Resistors
+              </button>
+              <button class="filter-option" data-filter="diodes">Diodes</button>
+              <button class="filter-option" data-filter="leds">LEDs</button>
+              <button class="filter-option" data-filter="oscillators">
+                Oscillators
+              </button>
+              <button class="filter-option" data-filter="transformers">
+                Transformers
+              </button>
+              <button class="filter-option" data-filter="batteries">
+                Batteries
+              </button>
+            </div>
+          </div>
+          <span class="filter-value">All</span>
+        </div>
+        <input type="text" class="quick-search" placeholder="Quick Search" />
+      </div>
       <!-- Resistor -->
+      <div class="components-grid">
       <div class="component-card">
         <div class="grid1">
           <div class="component-card-img">
@@ -103,177 +107,250 @@
           </div>
         </div>
       </div>
+      <!--diode-->
+       <div class="component-card">
+        <div class="grid1">
+          <div class="component-card-img">
+            <h3>Zener Diode</h3>
+            <img src="./imgs\deio.png" alt="Resistor" >
+          </div>
 
-      <!-- Zener Diode -->
-      <!-- <div class="component-card">
-    <div class="component-card-img" data-label="Zener Diode">
-      <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=300&q=80" alt="Zener Diode" />
-    </div>
-    <div class="component-card-body">
-      <h3>Zener Diode</h3>
-      <p class="desc">
-        A special type of diode designed to allow current to flow in the reverse direction when the
-        voltage exceeds a specified value — the Zener voltage. Used extensively in voltage regulation.
-      </p>
-      <div class="uses">
-        <h5>Uses</h5>
-        <ul>
-          <li>Voltage regulation</li>
-          <li>Overvoltage protection</li>
-          <li>Reference voltage</li>
-          <li>Clipping circuits</li>
-        </ul>
-      </div>
-      <div class="projects">
-        <h5>Projects</h5>
-        <ul>
-          <li>Power supply regulators</li>
-          <li>Signal clampers</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <a href="#" class="learn-more-btn">Learn More →</a>
-      <a href="shop.html?category=diodes" class="learn-more-btn">Shop →</a>
-    </div>
-  </div> -->
+          <div class="uses">
+            <h5>Uses</h5>
+            <ul>
+              <li>Current limiting</li>
+              <li>Voltage division</li>
+              <li>Signal attenuation</li>
+              <li>Pull-up/down</li>
+            </ul>
+          </div>
+        </div>
 
-      <!-- LED -->
-      <!-- <div class="component-card">
-    <div class="component-card-img led" data-label="LED (Light Emitting Diode)">
-      <img src="https://images.unsplash.com/photo-1601131166269-3c80d96b3947?w=300&q=80" alt="LED" />
-    </div>
-    <div class="component-card-body">
-      <h3>LED — Light Emitting Diode</h3>
-      <p class="desc">
-        A semiconductor light source that emits light when current flows through it. Electrons recombine
-        with electron holes, releasing energy as photons. Highly efficient, durable, and available in many wavelengths.
-      </p>
-      <div class="uses">
-        <h5>Uses</h5>
-        <ul>
-          <li>Indicator lights</li>
-          <li>Display backlights</li>
-          <li>Lighting</li>
-          <li>Communication (IR)</li>
-        </ul>
-      </div>
-      <div class="projects">
-        <h5>Projects</h5>
-        <ul>
-          <li>LED matrix displays</li>
-          <li>Traffic light simulators</li>
-          <li>Mood lighting</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <a href="#" class="learn-more-btn">Learn More →</a>
-      <a href="shop.html?category=leds" class="learn-more-btn">Shop →</a>
-    </div>
-  </div> -->
+        <div class="grid2">
+          <div class="discrip">
+            <h5>Discription</h5>
+            <p class="desc">
+              A passive electrical component that limits or regulates the flow
+              of electrical current. Resistors are fundamental to circuit
+              design, controlling voltage and current levels across a wide range
+              of applications.
+            </p>
+          </div>
 
-      <!-- Crystal Oscillator -->
-      <!-- <div class="component-card">
-    <div class="component-card-img" data-label="Crystal Oscillator">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&q=80" alt="Crystal Oscillator" />
-    </div>
-    <div class="component-card-body">
-      <h3>Crystal Oscillator</h3>
-      <p class="desc">
-        An electronic oscillator circuit that uses the mechanical resonance of vibrating crystal —
-        commonly quartz — to create an electrical signal with a precise frequency. Essential for timing.
-      </p>
-      <div class="uses">
-        <h5>Uses</h5>
-        <ul>
-          <li>Clock generation</li>
-          <li>Microcontroller timing</li>
-          <li>RF transmitters</li>
-          <li>Digital filters</li>
-        </ul>
-      </div>
-      <div class="projects">
-        <h5>Projects</h5>
-        <ul>
-          <li>Real-time clocks</li>
-          <li>Digital frequency meters</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <a href="#" class="learn-more-btn">Learn More →</a>
-      <a href="shop.html?category=oscillators" class="learn-more-btn">Shop →</a>
-    </div>
-  </div> -->
+          <div class="projects">
+            <div class="project">
+              <h5>Projects</h5>
+              <ul>
+                <li>LED driver circuits</li>
+                <li>Sensor interfaces</li>
+                <li>Amplifier biasing</li>
+              </ul>
+            </div>
+            <div class="btnsss">
+              <a href="#" class="learn-more-btn">Learn More →</a>
+              <a href="shop.html?category=resistors" class="learn-more-btn"
+                >Shop →</a
+              >
+            </div>
+          </div>
+        </div>
+        </div>
 
-      <!-- Transformer -->
-      <!-- <div class="component-card">
-    <div class="component-card-img" data-label="Transformer">
-      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&q=80" alt="Transformer" />
-    </div>
-    <div class="component-card-body">
-      <h3>Transformer</h3>
-      <p class="desc">
-        A passive electrical device that converts alternating current from one voltage to another using 
-        electromagnetic induction. Essential for power distribution and isolation in circuits.
-      </p>
-      <div class="uses">
-        <h5>Uses</h5>
-        <ul>
-          <li>Voltage conversion</li>
-          <li>Power distribution</li>
-          <li>Electrical isolation</li>
-          <li>Impedance matching</li>
-        </ul>
-      </div>
-      <div class="projects">
-        <h5>Projects</h5>
-        <ul>
-          <li>Power supply units</li>
-          <li>Signal couplers</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <a href="#" class="learn-more-btn">Learn More →</a>
-      <a href="shop.html?category=transformers" class="learn-more-btn">Shop →</a>
-    </div>
-  </div> -->
+         <!--LED-->
+       <div class="component-card">
+        <div class="grid1">
+          <div class="component-card-img">
+            <h3>LED</h3>
+            <img src="./imgs\leddd.png" alt="Led" >
+          </div>
 
-      <!-- Battery -->
-      <!-- <div class="component-card">
-    <div class="component-card-img" data-label="Battery">
-      <img src="https://images.unsplash.com/photo-1556740722-a3ee986b1f04?w=300&q=80" alt="Battery" />
-    </div>
-    <div class="component-card-body">
-      <h3>Battery</h3>
-      <p class="desc">
-        A device that stores chemical energy and converts it into electrical energy. Comes in various types including 
-        alkaline, lithium, and rechargeable variants, each suited for different applications.
-      </p>
-      <div class="uses">
-        <h5>Uses</h5>
-        <ul>
-          <li>Power source</li>
-          <li>Portable devices</li>
-          <li>Backup power</li>
-          <li>Energy storage</li>
-        </ul>
+          <div class="uses">
+            <h5>Uses</h5>
+            <ul>
+              <li>Current limiting</li>
+              <li>Voltage division</li>
+              <li>Signal attenuation</li>
+              <li>Pull-up/down</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="discrip">
+            <h5>Discription</h5>
+            <p class="desc">
+              A passive electrical component that limits or regulates the flow
+              of electrical current. Resistors are fundamental to circuit
+              design, controlling voltage and current levels across a wide range
+              of applications.
+            </p>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <h5>Projects</h5>
+              <ul>
+                <li>LED driver circuits</li>
+                <li>Sensor interfaces</li>
+                <li>Amplifier biasing</li>
+              </ul>
+            </div>
+            <div class="btnsss">
+              <a href="#" class="learn-more-btn">Learn More →</a>
+              <a href="shop.html?category=resistors" class="learn-more-btn"
+                >Shop →</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="projects">
-        <h5>Projects</h5>
-        <ul>
-          <li>Wireless applications</li>
-          <li>Emergency lighting</li>
-        </ul>
+
+       <!--Oscillator-->
+       <div class="component-card">
+        <div class="grid1">
+          <div class="component-card-img">
+            <h3>Crystal <br> Oscillator</h3>
+            <img src="./imgs\crys.png" alt="Oscillator" >
+          </div>
+
+          <div class="uses">
+            <h5>Uses</h5>
+            <ul>
+              <li>Current limiting</li>
+              <li>Voltage division</li>
+              <li>Signal attenuation</li>
+              <li>Pull-up/down</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="discrip">
+            <h5>Discription</h5>
+            <p class="desc">
+              A passive electrical component that limits or regulates the flow
+              of electrical current. Resistors are fundamental to circuit
+              design, controlling voltage and current levels across a wide range
+              of applications.
+            </p>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <h5>Projects</h5>
+              <ul>
+                <li>LED driver circuits</li>
+                <li>Sensor interfaces</li>
+                <li>Amplifier biasing</li>
+              </ul>
+            </div>
+            <div class="btnsss">
+              <a href="#" class="learn-more-btn">Learn More →</a>
+              <a href="shop.html?category=resistors" class="learn-more-btn"
+                >Shop →</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <a href="#" class="learn-more-btn">Learn More →</a>
-      <a href="shop.html?category=batteries" class="learn-more-btn">Shop →</a>
-    </div>
-  </div> -->
+
+       <!--Transformer-->
+       <div class="component-card">
+        <div class="grid1">
+          <div class="component-card-img">
+            <h3>Transformer</h3>
+            <img src="./imgs\Trans.png" alt="Transformer">
+          </div><br>
+
+          <div class="uses">
+            <h5>Uses</h5>
+            <ul>
+              <li>Current limiting</li>
+              <li>Voltage division</li>
+              <li>Signal attenuation</li>
+              <li>Pull-up/down</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="discrip">
+            <h5>Discription</h5>
+            <p class="desc">
+              A passive electrical component that limits or regulates the flow
+              of electrical current. Resistors are fundamental to circuit
+              design, controlling voltage and current levels across a wide range
+              of applications.
+            </p>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <h5>Projects</h5>
+              <ul>
+                <li>LED driver circuits</li>
+                <li>Sensor interfaces</li>
+                <li>Amplifier biasing</li>
+              </ul>
+            </div>
+            <div class="btnsss">
+              <a href="#" class="learn-more-btn">Learn More →</a>
+              <a href="shop.html?category=resistors" class="learn-more-btn"
+                >Shop →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Battery-->
+       <div class="component-card">
+        <div class="grid1">
+          <div class="component-card-img">
+            <h3>Battery</h3>
+          <img src="./imgs\batt.png" alt="Nattery" ><br>
+          </div>
+
+          <div class="uses">
+            <h5>Uses</h5>
+            <ul>
+              <li>Current limiting</li>
+              <li>Voltage division</li>
+              <li>Signal attenuation</li>
+              <li>Pull-up/down</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="discrip">
+            <h5>Discription</h5>
+            <p class="desc">
+              A passive electrical component that limits or regulates the flow
+              of electrical current. Resistors are fundamental to circuit
+              design, controlling voltage and current levels across a wide range
+              of applications.
+            </p>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <h5>Projects</h5>
+              <ul>
+                <li>LED driver circuits</li>
+                <li>Sensor interfaces</li>
+                <li>Amplifier biasing</li>
+              </ul>
+            </div>
+            <div class="btnsss">
+              <a href="#" class="learn-more-btn">Learn More →</a>
+              <a href="shop.html?category=resistors" class="learn-more-btn"
+                >Shop →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- ── FOOTER ── -->
