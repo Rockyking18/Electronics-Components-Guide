@@ -384,10 +384,19 @@ nav {
 .learn-more-btn + .learn-more-btn {
   margin-top: 0.5rem;
 }
-*/
 
-
-/* Bottom nav */
+ .exp-foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 2rem 2.5rem;
+  display: absoulte;
+  align-items: center;
+  justify-content: space-between;
+}
+/*Bottom*/
 .bottom-nav {
   background: rgba(200, 185, 170, 0.8);
   border-top: 1px solid #c0b5aa;

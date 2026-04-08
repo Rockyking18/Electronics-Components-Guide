@@ -4,7 +4,7 @@
 /* ── SHOP HERO ── */
 .shop-hero {
   padding: 8rem 2.5rem 3rem;
-  background:black url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+  background: url('./imgs/bg.jpg') center/cover no-repeat ;
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
@@ -12,17 +12,24 @@
 
 .shop-hero::before {
   display: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
+.shop-hero center{
+  filter: contrast(1) brightness(1.2);
+}
 .shop-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
-  color: var(--white);
+  color: var(--cyan);
   line-height: 1.1;
 }
 
-.shop-hero h1 span { color: var(--cyan); }
+.shop-hero h1 span { color: white; }
 
 .shop-hero p {
   color: white;
