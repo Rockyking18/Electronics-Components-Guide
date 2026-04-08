@@ -386,38 +386,6 @@ nav {
 }
 */
 
-/* Footer */
-footer {
-  background: rgba(200, 185, 170, 0.8);
-  padding: 2rem 2.5rem;
-  border-top: 1px solid #c0b5aa;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  bottom: 0;
-}
-
-.footer-logo {
-  color: #333;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.footer-logo span {
-  color: #555;
-}
-
-.social-links a {
-  color: #333;
-  border-color: #c0b5aa;
-}
-
-.social-links a:hover {
-  color: #555;
-  border-color: #555;
-}
 
 /* Bottom nav */
 .bottom-nav {

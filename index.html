@@ -1,146 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electronics Components Guide</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronics Components Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo">ECG<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <a href="shop.html" class="nav-cart-btn">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </nav>
 
-<nav>
-  <a href="index.html" class="nav-logo">ECG<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="explore.html">Explore</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-  <a href="shop.html" class="nav-cart-btn">
-    🛒 Cart <span class="cart-count" id="cartCount">0</span>
-  </a>
-</nav>
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-tag">
+          Everything you need to know about Electronic Components
+        </div>
+        <h1>
+          Electronics<br />
+          <span>Components Guide</span>
+        </h1>
+        <p>
+          Explore the fundamental building blocks of every circuit; from
+          resistors to microcontrollers. Learn what they do, how they work, and
+          where to use them.
+        </p>
+        <div class="button-group">
+          <a href="explore.html" class="btn-primary">Explore Components</a>
+          <a href="shop.html" class="btn-outline">Shop Now →</a>
+        </div>
+      </div>
+    </section>
 
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Everything you need to know about Electronic Components</div>
-    <h1 >
-      Electronics<br/>
-      <span>Components Guide</span>
-    </h1>
-    <p>
-      Explore the fundamental building blocks of every circuit; from resistors
-      to microcontrollers. Learn what they do, how they work, and where to use them.
-    </p>
-    <div class="button-group">
-      <a href="explore.html" class="btn-primary">Explore Components</a>
-      <a href="shop.html" class="btn-outline">Shop Now →</a>
-    </div>
-  </div>
-</section>
+    <!-- ── WHAT ARE ELECTRONICS ── -->
+    <section class="what-section">
+      <div class="what-video">
+        <video controls preload="metadata" playsinline>
+          <source src="./vids/What.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="what-text">
+        <h3>What are Electronics?</h3>
+        <p>
+          Electronics is a branch of physics that focuses on the emission,
+          behavior, and effects of electrons and their use in devices. It forms
+          the backbone of modern technology — from smartphones to spacecraft.
+        </p>
+        <p>
+          At its core, every electronic system is built from a handful of
+          fundamental components, each with a precise function that contributes
+          to the whole.
+        </p>
+        <div class="carousel-controls">
+          <button class="carousel-btn">&#8592;</button>
+          <button class="carousel-btn">&#8594;</button>
+        </div>
+        <a href="explore.html" class="explorebtn">
+          Explore Components
+        </a>
+      </div>
+    </section>
 
-<!-- ── WHAT ARE ELECTRONICS ── -->
-<section class="what-section">
-  <div class="what-image">
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Electronics Board" />
-  </div>
-  <div class="what-text">
-    <h3>What are Electronics?</h3>
-    <p>
-      Electronics is a branch of physics that focuses on the emission, behavior, and
-      effects of electrons and their use in devices. It forms the backbone of modern
-      technology — from smartphones to spacecraft.
-    </p>
-    <p>
-      At its core, every electronic system is built from a handful of fundamental
-      components, each with a precise function that contributes to the whole.
-    </p>
-    <div class="carousel-controls">
-      <button class="carousel-btn">&#8592;</button>
-      <button class="carousel-btn">&#8594;</button>
-    </div>
-    <a href="explore.html" class="btn-outline btn-outline-cta">
-      Explore Components
-    </a>
-  </div>
-</section>
+    <!-- ── WHY STUDY SECTION ── -->
+    <section class="why-section">
+      <div class="section-header">
+        <h2>Why study <span class="text-cyan">Electronics?</span></h2>
+      </div>
 
-<!-- ── WHY STUDY SECTION ── -->
-<section class="why-section">
-  <div class="section-header">
-    <h2>Why study <span class="text-cyan">Electronics?</span></h2>
-  </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-num">1</div>
+          <h4>Foundation of Technology</h4>
+          <p>
+            Electronics underpins virtually every modern device and system used
+            in daily life and industry.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">2</div>
+          <h4>Problem Solving</h4>
+          <p>
+            Electronic design develops analytical thinking, circuit
+            troubleshooting, and systematic logic skills.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">3</div>
+          <h4>Innovation Platform</h4>
+          <p>
+            From IoT to robotics, electronics enables innovation across every
+            engineering discipline imaginable.
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">4</div>
+          <h4>Career Demand</h4>
+          <p>
+            Electronics engineers are among the most sought-after professionals
+            globally, across all industries.
+          </p>
+        </div>
+      </div>
 
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-num">1</div>
-      <h4>Foundation of Technology</h4>
-      <p>Electronics underpins virtually every modern device and system used in daily life and industry.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">2</div>
-      <h4>Problem Solving</h4>
-      <p>Electronic design develops analytical thinking, circuit troubleshooting, and systematic logic skills.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">3</div>
-      <h4>Innovation Platform</h4>
-      <p>From IoT to robotics, electronics enables innovation across every engineering discipline imaginable.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-num">4</div>
-      <h4>Career Demand</h4>
-      <p>Electronics engineers are among the most sought-after professionals globally, across all industries.</p>
-    </div>
-  </div>
+      <div class="section-cta">
+        <a href="explore.html" class="btn-primary">Explore Components</a>
+      </div>
+      <br /><br />
 
-  <div class="section-cta">
-    <a href="explore.html" class="btn-primary">Explore Components</a>
-  </div><br/><br/>
+      <!-- ── COMPONENT STRIP ── -->
+      <div class="component-strip">
+        <div class="component-thumb">
+          <img src="C:\Users\HP ELITEBOOK\Pictures\re.webp" alt="Resistor" />
+        </div>
+        <div class="component-thumb">
+          <img src="C:\Users\HP ELITEBOOK\Pictures\cer.webp" alt="Capacitor" />
+        </div>
+        <div class="component-thumb">
+          <img src="C:\Users\HP ELITEBOOK\Pictures\fer.webp" alt="Inductor" />
+        </div>
+        <div class="component-thumb">
+          <img src="C:\Users\HP ELITEBOOK\Pictures\dio.webp" alt="Diode" />
+        </div>
+        <div class="component-thumb">
+          <img
+            src="C:\Users\HP ELITEBOOK\Pictures\trans.webp"
+            alt="Transistor"
+          />
+        </div>
+        <div class="component-thumb">
+          <img src="C:\Users\HP ELITEBOOK\Pictures\ic.webp" alt="IC" />
+        </div>
+        <div class="component-thumb">
+          <img src="C:\Users\HP ELITEBOOK\Pictures\led.webp" alt="LED" />
+        </div>
+      </div>
+    </section>
 
-<!-- ── COMPONENT STRIP ── -->
-  <div class="component-strip">
-    <div class="component-thumb"><img src="C:\Users\HP ELITEBOOK\Pictures\re.webp" alt="Resistor"/></div>
-    <div class="component-thumb"><img src="C:\Users\HP ELITEBOOK\Pictures\cer.webp" alt="Capacitor"/></div>
-    <div class="component-thumb"><img src="C:\Users\HP ELITEBOOK\Pictures\fer.webp" alt="Inductor"/></div>
-    <div class="component-thumb"><img src="C:\Users\HP ELITEBOOK\Pictures\dio.webp" alt="Diode"/></div>
-    <div class="component-thumb"><img src="C:\Users\HP ELITEBOOK\Pictures\trans.webp" alt="Transistor"/></div>
-    <div class="component-thumb"><img src="C:\Users\HP ELITEBOOK\Pictures\ic.webp" alt="IC"/></div>
-    <div class="component-thumb"><img src="C:\Users\HP ELITEBOOK\Pictures\led.webp" alt="LED"/></div>
-  </div>
-</section>
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="footer-logo">ECG<span>.</span></div>
+      <div class="social-links">
+        <a href="#">𝕏</a>
+        <a href="#">in</a>
+        <a href="#">gh</a>
+        <a href="#">yt</a>
+      </div>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-logo">ECG<span>.</span></div>
-  <div class="social-links">
-    <a href="#">𝕏</a>
-    <a href="#">in</a>
-    <a href="#">gh</a>
-    <a href="#">yt</a>
-  </div>
-</footer>
+      <div class="bottom-nav">
+        <div class="bottom-nav-inner">
+          <a href="index.html" class="bottom-nav-link active"
+            >🏠<span>Home</span></a
+          >
+          <a href="explore.html" class="bottom-nav-link"
+            >🔍<span>Explore</span></a
+          >
+          <a href="shop.html" class="bottom-nav-link">🛒<span>Shop</span></a>
+          <a href="about.html" class="bottom-nav-link">ℹ️<span>About</span></a>
+        </div>
+      </div>
+    </footer>
 
-<!-- ── BOTTOM NAV (mobile) ── -->
-<div class="bottom-nav">
-  <div class="bottom-nav-inner">
-    <a href="index.html" class="bottom-nav-link active">🏠<span>Home</span></a>
-    <a href="explore.html" class="bottom-nav-link">🔍<span>Explore</span></a>
-    <a href="shop.html" class="bottom-nav-link">🛒<span>Shop</span></a>
-    <a href="about.html" class="bottom-nav-link">ℹ️<span>About</span></a>
-  </div>
-</div>
-
-<script>
-  // Update cart count from localStorage
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('ecg-cart') || '[]');
-    const total = cart.reduce((s, i) => s + (i.qty || 1), 0);
-    document.querySelectorAll('#cartCount').forEach(el => el.textContent = total);
-  }
-  updateCartCount();
-</script>
-</body>
+    <script>
+      // Update cart count from localStorage
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("ecg-cart") || "[]");
+        const total = cart.reduce((s, i) => s + (i.qty || 1), 0);
+        document
+          .querySelectorAll("#cartCount")
+          .forEach((el) => (el.textContent = total));
+      }
+      updateCartCount();
+    </script>
+  </body>
 </html>
