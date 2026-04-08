@@ -37,12 +37,6 @@
   <!-- SIDEBAR -->
   <aside class="shop-sidebar">
 
-    <!-- Search -->
-    <div class="sidebar-section">
-      <div class="sidebar-title">Search</div>
-      <input type="text" class="search-input" placeholder="Component name, SKU..." id="searchInput" />
-    </div>
-
     <!-- Categories -->
     <div class="sidebar-section">
       <div class="sidebar-title">Category</div>
@@ -118,8 +112,8 @@
 
     <!-- Toolbar -->
     <div class="shop-toolbar">
-      <div class="results-count">
-        Showing <strong>48</strong> results
+      <div class="search-bar">
+        <input type="search" placeholder="Quick Search">
       </div>
       <div class="toolbar-right">
         <select class="sort-select" id="sortSelect">
@@ -146,7 +140,7 @@
           <span class="product-badge badge-hot">Hot</span>
           <button class="wishlist-btn" data-id="1">♡</button>
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&q=80" alt="Resistor Pack" />
+            <img src="./imgs/resis.avif" alt="Resistor Pack" />
             <div class="quick-add" onclick="addToCart(1)">+ Add to Cart</div>
           </div>
           <div class="product-info">
@@ -164,7 +158,7 @@
             </div>
             <div class="price-row">
               <div class="price-wrap">
-                <div class="price">GHS 45</div>
+                <div class="price">GHS 45</div><br/><br/>
                 <div class="price-old">GHS 60</div>
               </div>
               <button class="add-to-cart" onclick="addToCart(1, 'Resistor Pack', 45)">+</button>
@@ -177,7 +171,7 @@
           <span class="product-badge badge-new">New</span>
           <button class="wishlist-btn" data-id="2">♡</button>
           <div class="product-img">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Capacitors" />
+            <img src="./imgs/cystals.jpg" alt="Capacitors" />
             <div class="quick-add" onclick="addToCart(2)">+ Add to Cart</div>
           </div>
           <div class="product-info">
@@ -262,32 +256,31 @@
           </div>
         </div>
 
-        <!-- Product 5: LED Kit -->
-        <div class="product-card" data-id="5" data-cat="leds">
-          <span class="product-badge badge-hot">Hot</span>
-          <button class="wishlist-btn" data-id="5">♡</button>
-          <div class="product-img" style="background:linear-gradient(135deg,#0a0c0f,#1a1228);">
-            <img src="https://images.unsplash.com/photo-1601131166269-3c80d96b3947?w=400&q=80" alt="LEDs" />
-            <div class="quick-add" onclick="addToCart(5)">+ Add to Cart</div>
+         <!-- Product 6: Zener Diode Kit -->
+        <div class="product-card" data-id="6" data-cat="diodes">
+          <button class="wishlist-btn" data-id="6">♡</button>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Zener Diodes" />
+            <div class="quick-add" onclick="addToCart(6)">+ Add to Cart</div>
           </div>
           <div class="product-info">
-            <div class="product-category">LEDs</div>
-            <div class="product-name">5mm LED Assortment ×200</div>
-            <div class="product-desc">200-piece LED assortment: red, green, blue, yellow, white. 5mm diffused and clear.</div>
+            <div class="product-category">Diodes</div>
+            <div class="product-name">Zener Diode Kit — 24 Values</div>
+            <div class="product-desc">24 Zener voltages from 2.4V to 33V, 5 of each value, 1/2W, DO-35 glass package.</div>
             <div class="product-specs">
-              <span class="spec-tag">5mm</span>
-              <span class="spec-tag">5 Colors</span>
-              <span class="spec-tag">200pcs</span>
+              <span class="spec-tag">1/2W</span>
+              <span class="spec-tag">2.4V–33V</span>
+              <span class="spec-tag">120pcs</span>
             </div>
             <div class="product-rating">
-              <div class="stars">★★★★★</div>
-              <span>(156)</span>
+              <div class="stars">★★★★☆</div>
+              <span>(41)</span>
             </div>
             <div class="price-row">
               <div class="price-wrap">
-                <div class="price">GHS 32</div>
+                <div class="price">GHS 38</div>
               </div>
-              <button class="add-to-cart" onclick="addToCart(5, 'LED Assortment ×200', 32)">+</button>
+              <button class="add-to-cart" onclick="addToCart(6, 'Zener Diode Kit', 38)">+</button>
             </div>
           </div>
         </div>
