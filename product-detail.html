@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="pageTitle">Product — ECG</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="product-detail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ── NAVIGATION ── -->
+    <nav>
+      <a href="index.html" class="nav-logo">ECG<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-cart-btn" id="openCart">
+        <i class="fas fa-cart-shopping"></i> Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
+
+    <!-- ── PRODUCT DETAIL ── -->
+    <div class="product-detail">
+      <!-- LEFT: Gallery -->
+      <div class="detail-gallery">
+        <div class="detail-main-img">
+          <img id="mainImg" src="" alt="Product" />
+        </div>
+        <div class="detail-thumbs" id="thumbs"></div>
+      </div>
+
+      <!-- RIGHT: Info -->
+      <div class="detail-info">
+        <div class="breadcrumb">
+          <a href="shop.html">Shop</a>
+          <span>/</span>
+          <span id="breadcrumbCat">Components</span>
+          <span>/</span>
+          <span id="breadcrumbName">Product</span>
+        </div>
+
+        <h1 id="detailName">Loading...</h1>
+        <div class="sku" id="detailSku">SKU: ECG-000</div>
+
+        <div class="stock-indicator">
+          <div class="stock-dot"></div>
+          <span>In Stock</span>
+        </div>
+
+        <div class="detail-rating">
+          <div class="stars" id="detailStars">★★★★★</div>
+          <span id="detailReviews">(0 reviews)</span>
+        </div>
+
+        <div class="detail-price-block">
+          <div class="detail-price" id="detailPrice">GHS 0</div>
+          <div class="detail-price-old" id="detailPriceOld"></div>
+          <div class="detail-save" id="detailSave" style="display: none"></div>
+        </div>
+
+        <p class="detail-desc" id="detailDesc"></p>
+
+        <table class="spec-table" id="specTable"></table>
+
+        <div class="add-to-cart-block">
+          <div class="qty-selector">
+            <button onclick="changeQty(-1)">−</button>
+            <span id="qtyDisplay">1</span>
+            <button onclick="changeQty(1)">+</button>
+          </div>
+          <button class="detail-add-btn" id="addBtn">
+            <i class="fas fa-cart-plus"></i>&nbsp; Add to Cart
+          </button>
+          <button class="wishlist-detail-btn" id="wishBtn" title="Wishlist">
+            <i class="far fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RELATED PRODUCTS ── -->
+    <div class="related-section">
+      <h2>Related <span style="color: var(--cyan)">Products</span></h2>
+      <div class="related-grid" id="relatedGrid"></div>
+    </div>
+
+    <!-- ── CART DRAWER ── -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="cart-close" onclick="closeCart()">✕</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+          <div class="cart-empty-icon">🛒</div>
+          <p>Cart is empty</p>
+        </div>
+      </div>
+      <div class="cart-footer" id="cartFooter" style="display: none">
+        <div class="cart-subtotal">
+          <span>Subtotal</span>
+          <strong id="cartTotal">GHS 0</strong>
+        </div>
+        <p
+          class="cart-tax"
+          style="
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+          "
+        >
+          Taxes &amp; shipping calculated at checkout
+        </p>
+        <button class="checkout-btn" onclick="location.href = 'checkout.html'">
+          Proceed to Checkout →
+        </button>
+        <span class="continue-shopping" onclick="closeCart()"
+          >← Continue Shopping</span
+        >
+      </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="footer-logo">ECG<span>.</span></div>
+      <div class="social-links">
+        <a href="#">𝕏</a><a href="#">in</a><a href="#">gh</a><a href="#">yt</a>
+      </div>
+    </footer>
+
+    <div class="bottom-nav">
+      <div class="bottom-nav-inner">
+        <a href="index.html" class="bottom-nav-link"
+          ><i class="fas fa-house"></i><span>Home</span></a
+        >
+        <a href="explore.html" class="bottom-nav-link"
+          ><i class="fas fa-magnifying-glass"></i><span>Explore</span></a
+        >
+        <a href="shop.html" class="bottom-nav-link active"
+          ><i class="fas fa-cart-shopping"></i><span>Shop</span></a
+        >
+        <a href="about.html" class="bottom-nav-link"
+          ><i class="fas fa-circle-info"></i><span>About</span></a
+        >
+      </div>
+    </div>
+
+    <script>
+      /* ── PRODUCT DATABASE ── */
+      const products = [
+        {
+          id: 1,
+          name: "Resistor Variety Pack",
+          category: "Resistors",
+          cat: "resistors",
+          sku: "ECG-RES-001",
+          price: 45,
+          oldPrice: 60,
+          rating: 5,
+          reviews: 128,
+          desc: "600-piece assortment of through-hole resistors covering 30 values from 10Ω to 1MΩ. 1/4W rated, ±5% tolerance. Stored in a labelled organiser box — perfect for breadboarding, prototyping, and teaching kits.",
+          images: [
+            "./imgs/resis.avif",
+            "./imgs/resis.avif",
+            "./imgs/resis.avif",
+          ],
+          specs: [
+            ["Power Rating", "1/4W (0.25W)"],
+            ["Tolerance", "±5%"],
+            ["Values", "30 different (10Ω – 1MΩ)"],
+            ["Quantity", "600 pieces"],
+            ["Package", "Through-Hole (THT)"],
+            ["Standard", "RoHS Compliant"],
+          ],
+        },
+        {
+          id: 2,
+          name: "Ceramic Capacitor Kit",
+          category: "Capacitors",
+          cat: "capacitors",
+          sku: "ECG-CAP-002",
+          price: 68,
+          oldPrice: null,
+          rating: 4,
+          reviews: 64,
+          desc: "500-piece ceramic capacitor set spanning values from 10pF to 100µF. Includes both SMD and through-hole variants with a compact storage box. Ideal for decoupling, filtering, and timing circuits.",
+          images: [
+            "./imgs/cystals.jpg",
+            "./imgs/cystals.jpg",
+            "./imgs/cystals.jpg",
+          ],
+          specs: [
+            ["Voltage Rating", "Up to 500V"],
+            ["Values", "10pF – 100µF"],
+            ["Types", "SMD + Through-Hole"],
+            ["Quantity", "500 pieces"],
+            ["Dielectric", "X7R / Y5V / NP0"],
+            ["Standard", "RoHS Compliant"],
+          ],
+        },
+        {
+          id: 3,
+          name: "1N4148 Fast Switching Diode ×100",
+          category: "Diodes",
+          cat: "diodes",
+          sku: "ECG-DIO-003",
+          price: 18,
+          oldPrice: null,
+          rating: 5,
+          reviews: 203,
+          desc: "Small signal fast switching diode in glass DO-35 package. 100V peak reverse voltage, 200mA continuous forward current. Essential for signal protection, rectification, and logic clamping.",
+          images: [
+            "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80",
+          ],
+          specs: [
+            ["Peak Reverse Voltage", "100V"],
+            ["Forward Current", "200mA"],
+            ["Reverse Recovery Time", "4ns"],
+            ["Package", "DO-35 Glass"],
+            ["Quantity", "100 pieces"],
+            ["Standard", "RoHS Compliant"],
+          ],
+        },
+        {
+          id: 4,
+          name: "BC547 NPN Transistor ×50",
+          category: "Transistors",
+          cat: "transistors",
+          sku: "ECG-TRN-004",
+          price: 24,
+          oldPrice: 30,
+          rating: 4,
+          reviews: 87,
+          desc: "General purpose NPN bipolar junction transistor in TO-92 plastic package. 45V collector-emitter voltage, 100mA collector current. Ideal for switching, signal amplification, and driver stages.",
+          images: [
+            "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+          ],
+          specs: [
+            ["Type", "NPN BJT"],
+            ["Vceo", "45V"],
+            ["Ic Max", "100mA"],
+            ["hFE (β)", "110 – 800"],
+            ["Package", "TO-92"],
+            ["Quantity", "50 pieces"],
+          ],
+        },
+        {
+          id: 5,
+          name: "RGB LED Assortment ×100",
+          category: "LEDs",
+          cat: "leds",
+          sku: "ECG-LED-005",
+          price: 28,
+          oldPrice: null,
+          rating: 5,
+          reviews: 91,
+          desc: "100-piece LED kit covering red, green, blue, white and yellow colours. 5mm through-hole, 2.1V–3.4V forward voltage depending on colour. Great for indicators, decorative lighting and beginner projects.",
+          images: [
+            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80",
+          ],
+          specs: [
+            ["Size", "5mm"],
+            ["Package", "Through-Hole"],
+            ["Forward Voltage", "2.1V – 3.4V"],
+            ["Colours", "Red, Green, Blue, White, Yellow"],
+            ["Quantity", "100 pieces"],
+            ["Standard", "RoHS Compliant"],
+          ],
+        },
+        {
+          id: 6,
+          name: "Zener Diode Kit ×50",
+          category: "Diodes",
+          cat: "diodes",
+          sku: "ECG-ZEN-006",
+          price: 38,
+          oldPrice: null,
+          rating: 4,
+          reviews: 56,
+          desc: "50-piece assortment of Zener diodes covering voltage range 2.4V to 33V in DO-35 glass package. Essential for voltage regulation, overvoltage protection, and reference circuits.",
+          images: [
+            "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=600&q=80",
+          ],
+          specs: [
+            ["Voltage Range", "2.4V – 33V"],
+            ["Package", "DO-35 Glass"],
+            ["Power Dissipation", "500mW"],
+            ["Quantity", "50 pieces"],
+            [
+              "Values Included",
+              "2.4, 3.3, 3.9, 4.7, 5.1, 5.6, 6.2, 7.5, 8.2, 9.1, 10, 12, 15, 18, 24, 33V",
+            ],
+            ["Standard", "RoHS Compliant"],
+          ],
+        },
+        {
+          id: 7,
+          name: "NE555 Timer IC ×10",
+          category: "Integrated Circuits",
+          cat: "ics",
+          sku: "ECG-IC-007",
+          price: 22,
+          oldPrice: null,
+          rating: 5,
+          reviews: 312,
+          desc: "The classic NE555 timer IC from Texas Instruments in DIP-8 package. Supports astable, monostable, and bistable operation. Operating voltage 5V – 15V. A must-have for any component kit.",
+          images: [
+            "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+          ],
+          specs: [
+            ["Supply Voltage", "5V – 15V"],
+            ["Package", "DIP-8"],
+            ["Output Current", "200mA"],
+            ["Timing Range", "µs to hours"],
+            ["Manufacturer", "Texas Instruments"],
+            ["Quantity", "10 pieces"],
+          ],
+        },
+        {
+          id: 8,
+          name: "LM35 Temperature Sensor ×5",
+          category: "Sensors",
+          cat: "sensors",
+          sku: "ECG-SEN-008",
+          price: 55,
+          oldPrice: 65,
+          rating: 4,
+          reviews: 74,
+          desc: "Precision centigrade temperature sensor with linear 10mV/°C output. Range −55°C to +150°C. No external calibration required. Analogue output connects directly to ADC or microcontroller. TO-92 package.",
+          images: [
+            "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&q=80",
+          ],
+          specs: [
+            ["Temperature Range", "−55°C to +150°C"],
+            ["Output", "10mV/°C (linear)"],
+            ["Supply Voltage", "4V – 30V"],
+            ["Accuracy", "±0.5°C at 25°C"],
+            ["Package", "TO-92"],
+            ["Quantity", "5 pieces"],
+          ],
+        },
+      ];
+
+      /* ── STATE ── */
+      let cart = JSON.parse(localStorage.getItem("ecg-cart") || "[]");
+      let qty = 1;
+      let currentProduct = null;
+
+      /* ── LOAD PRODUCT FROM URL ── */
+      function loadProduct() {
+        const params = new URLSearchParams(location.search);
+        const id = parseInt(params.get("id")) || 1;
+        const p = products.find((x) => x.id === id) || products[0];
+        currentProduct = p;
+
+        document.title = p.name + " — ECG";
+        document.getElementById("pageTitle").textContent = p.name + " — ECG";
+        document.getElementById("detailName").textContent = p.name;
+        document.getElementById("detailSku").textContent = "SKU: " + p.sku;
+        document.getElementById("breadcrumbCat").textContent = p.category;
+        document.getElementById("breadcrumbName").textContent = p.name;
+        document.getElementById("detailDesc").textContent = p.desc;
+        document.getElementById("detailPrice").textContent = "GHS " + p.price;
+        document.getElementById("detailReviews").textContent =
+          "(" + p.reviews + " reviews)";
+
+        // Stars
+        const full = Math.round(p.rating);
+        document.getElementById("detailStars").textContent =
+          "★".repeat(full) + "☆".repeat(5 - full);
+
+        // Old price / save badge
+        if (p.oldPrice) {
+          document.getElementById("detailPriceOld").textContent =
+            "GHS " + p.oldPrice;
+          const pct = Math.round((1 - p.price / p.oldPrice) * 100);
+          const save = document.getElementById("detailSave");
+          save.textContent = "−" + pct + "%";
+          save.style.display = "";
+        }
+
+        // Main image
+        document.getElementById("mainImg").src = p.images[0];
+        document.getElementById("mainImg").alt = p.name;
+
+        // Thumbnails
+        const thumbsEl = document.getElementById("thumbs");
+        thumbsEl.innerHTML = p.images
+          .map(
+            (src, i) => `
+    <div class="detail-thumb ${i === 0 ? "active" : ""}" onclick="switchImg(this, '${src}')">
+      <img src="${src}" alt="${p.name}" />
+    </div>`,
+          )
+          .join("");
+
+        // Spec table
+        const tableEl = document.getElementById("specTable");
+        tableEl.innerHTML = p.specs
+          .map(
+            ([k, v]) => `
+    <tr><td>${k}</td><td>${v}</td></tr>`,
+          )
+          .join("");
+
+        // Add to cart button
+        document.getElementById("addBtn").onclick = () => {
+          addToCart(p.id, p.name, p.price);
+        };
+
+        // Related products (same category, exclude self)
+        const related = products.filter(
+          (x) => x.cat === p.cat && x.id !== p.id,
+        );
+        const relatedGrid = document.getElementById("relatedGrid");
+        if (related.length === 0) {
+          relatedGrid.closest(".related-section").style.display = "none";
+        } else {
+          relatedGrid.innerHTML = related
+            .map(
+              (r) => `
+      <div class="product-card" onclick="location.href='product-detail.html?id=${r.id}'">
+        <div class="product-img">
+          <img src="${r.images[0]}" alt="${r.name}" />
+        </div>
+        <div class="product-info">
+          <div class="product-category">${r.category}</div>
+          <div class="product-name">${r.name}</div>
+          <div class="price-row">
+            <div class="price">GHS ${r.price}</div>
+            <button class="add-to-cart" onclick="event.stopPropagation();addToCart(${r.id},'${r.name}',${r.price})">+</button>
+          </div>
+        </div>
+      </div>`,
+            )
+            .join("");
+        }
+      }
+
+      function switchImg(thumb, src) {
+        document.getElementById("mainImg").src = src;
+        document
+          .querySelectorAll(".detail-thumb")
+          .forEach((t) => t.classList.remove("active"));
+        thumb.classList.add("active");
+      }
+
+      /* ── QTY ── */
+      function changeQty(delta) {
+        qty = Math.max(1, qty + delta);
+        document.getElementById("qtyDisplay").textContent = qty;
+      }
+
+      /* ── WISHLIST ── */
+      document.getElementById("wishBtn").addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.innerHTML = this.classList.contains("active")
+          ? '<i class="fas fa-heart" style="color:var(--danger)"></i>'
+          : '<i class="far fa-heart"></i>';
+      });
+
+      /* ── CART ── */
+      function updateCartCount() {
+        const total = cart.reduce((s, i) => s + i.qty, 0);
+        document
+          .querySelectorAll("#cartCount")
+          .forEach((el) => (el.textContent = total));
+      }
+
+      function saveCart() {
+        localStorage.setItem("ecg-cart", JSON.stringify(cart));
+        updateCartCount();
+        renderCartDrawer();
+      }
+
+      function addToCart(id, name, price) {
+        for (let i = 0; i < qty; i++) {
+          const existing = cart.find((x) => x.id === id);
+          if (existing) existing.qty++;
+          else cart.push({ id, name, price, qty: 1 });
+        }
+        saveCart();
+        openCart();
+      }
+
+      function renderCartDrawer() {
+        const container = document.getElementById("cartItems");
+        const footer = document.getElementById("cartFooter");
+        if (cart.length === 0) {
+          container.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Cart is empty</p></div>`;
+          footer.style.display = "none";
+          return;
+        }
+        footer.style.display = "block";
+        let total = 0;
+        container.innerHTML = cart
+          .map((item) => {
+            total += item.price * item.qty;
+            return `
+      <div class="cart-item">
+        <div class="cart-item-img">
+          <img src="https://via.placeholder.com/40/111418/00c8ff?text=${encodeURIComponent(item.name.charAt(0))}" alt="${item.name}"/>
+        </div>
+        <div>
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">GHS ${item.price}</div>
+        </div>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeCartQty(${item.id},-1)">−</button>
+          <input class="qty-num" type="text" value="${item.qty}" readonly />
+          <button class="qty-btn" onclick="changeCartQty(${item.id},1)">+</button>
+        </div>
+      </div>`;
+          })
+          .join("");
+        document.getElementById("cartTotal").textContent = "GHS " + total;
+      }
+
+      function changeCartQty(id, delta) {
+        const item = cart.find((i) => i.id === id);
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) cart = cart.filter((i) => i.id !== id);
+        saveCart();
+      }
+
+      function openCart() {
+        document.getElementById("cartDrawer").classList.add("open");
+        document.getElementById("cartOverlay").classList.add("open");
+        renderCartDrawer();
+      }
+
+      function closeCart() {
+        document.getElementById("cartDrawer").classList.remove("open");
+        document.getElementById("cartOverlay").classList.remove("open");
+      }
+
+      document.getElementById("openCart").addEventListener("click", openCart);
+
+      /* ── INIT ── */
+      loadProduct();
+      updateCartCount();
+      renderCartDrawer();
+    </script>
+  </body>
+</html>

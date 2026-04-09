@@ -152,6 +152,15 @@ document.querySelectorAll(".page-btn").forEach((btn) => {
   });
 });
 
+/* ── Product card → detail page ── */
+document.querySelectorAll(".product-card").forEach((card) => {
+  card.style.cursor = "pointer";
+  card.addEventListener("click", function (e) {
+    if (e.target.closest("button, .quick-add")) return;
+    location.href = "product-detail.html?id=" + this.dataset.id;
+  });
+});
+
 /* ── Init ── */
 updateCartCount();
 renderCartDrawer();
