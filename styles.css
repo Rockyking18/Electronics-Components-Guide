@@ -419,8 +419,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("file:///C:/Users/HP%20ELITEBOOK/Downloads/harrison-broadbent-afZVP8xbbw0-unsplash.jpg")
-    center/cover no-repeat;
+  background: url("./imgs/bg.jpg") center/cover no-repeat;
   background-size: cover;
   filter: blur(25px);
   transform: scale(1.25);
@@ -571,7 +570,7 @@ section {
 footer {
   background: white;
   padding: 2rem 2.5rem;
-  display:absoulte;
+  display: absoulte;
   align-items: center;
   justify-content: space-between;
 }

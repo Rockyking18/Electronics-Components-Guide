@@ -1,6 +1,17 @@
 /* ── Cart State ── */
 let cart = JSON.parse(localStorage.getItem("ecg-cart") || "[]");
 
+const productImages = {
+  1: "./imgs/resis.avif",
+  2: "./imgs/cystals.jpg",
+  3: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&q=80",
+  4: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
+  5: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=80",
+  6: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=400&q=80",
+  7: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
+  8: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&q=80",
+};
+
 function saveCart() {
   localStorage.setItem("ecg-cart", JSON.stringify(cart));
   updateCartCount();
@@ -48,7 +59,7 @@ function renderCartDrawer() {
       return `
       <div class="cart-item">
         <div class="cart-item-img">
-          <img src="https://via.placeholder.com/40/111418/00c8ff?text=${encodeURIComponent(item.name.charAt(0))}" alt="${item.name}"/>
+          <img src="${productImages[item.id] || ''}" alt="${item.name}"/>
         </div>
         <div>
           <div class="cart-item-name">${item.name}</div>
