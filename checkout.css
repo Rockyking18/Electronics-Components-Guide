@@ -1,4 +1,29 @@
-/* CHECKOUT PAGE STYLES */
+
+/* ── BACKGROUND ── */
+body {
+  position: relative;
+  background: #0a0c0f;
+  color:black;
+  font-family:'Times New Roman', Times, serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("./imgs/bg.jpg") center/cover no-repeat;
+  filter: blur(22px);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+/* ── NAV BACKDROP ── */
+nav {
+  background: rgba(10, 12, 15, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
 
 /* ── CHECKOUT LAYOUT ── */
 .checkout-layout {
@@ -14,31 +39,56 @@
 /* ── PROGRESS INDICATOR ── */
 .checkout-progress {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .progress-step {
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-family: 'Times New Roman', Times, serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--muted);
+  letter-spacing: 1.5px;
+  color:white;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
 }
 
 .progress-step.active {
   color: var(--cyan);
+  border-color: var(--cyan);
+  background: rgba(0, 200, 255, 0.08);
+}
+
+.checkout-progress .progress-step:not(:last-child)::after {
+  content: "";
+  margin-left: 0.5rem;
+  color: var(--border);
+  font-size: 0.7rem;
+}
+
+/* ── FORM WRAPPER ── */
+.checkout-form-section {
+  background: rgba(10, 12, 15, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2.5rem;
 }
 
 /* ── FORM SECTION ── */
 .checkout-form-section h2 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin: 0 0 1.25rem 0;
-  color: var(--white);
+  color:white;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .form-group {
@@ -47,8 +97,8 @@
 
 .form-label {
   font-size: 0.8rem;
-  font-family: var(--font-mono);
-  color: var(--muted);
+  font-family:'Times New Roman', Times, serif;
+  color:white;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: block;
@@ -57,7 +107,7 @@
 
 .form-input {
   width: 100%;
-  background: var(--bg-card);
+  background: rgba(17, 20, 24, 0.8);
   border: 1px solid var(--border);
   color: var(--white);
   font-family: var(--font-body);
@@ -65,7 +115,9 @@
   padding: 0.75rem 1rem;
   border-radius: 4px;
   outline: none;
-  transition: border-color 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .form-input::placeholder {
@@ -75,8 +127,11 @@
 
 .form-input:focus {
   border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.1);
 }
-
+.ship{
+  margin-top:2.5rem
+}
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -221,10 +276,12 @@
 
 /* ── ORDER SUMMARY ── */
 .order-summary {
-  background: var(--bg-card);
+  background: rgba(10, 12, 15, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 1.5rem;
+  border-radius: 6px;
+  padding: 1.75rem;
   height: fit-content;
   position: sticky;
   top: 80px;
@@ -232,12 +289,14 @@
 
 .order-summary h3 {
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cyan);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
   margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .order-line {
