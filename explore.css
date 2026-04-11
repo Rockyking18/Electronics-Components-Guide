@@ -3,8 +3,7 @@
 
 /* Light theme override for components page */
 body {
-  background: url("file:///C:/Users/HP%20ELITEBOOK/Downloads/harrison-broadbent-afZVP8xbbw0-unsplash.jpg")
-    center/cover no-repeat fixed;
+  background: url("./imgs/bg.jpg") center/cover no-repeat fixed;
   background-color: rgba(255, 255, 255, 0.3); /* Must be transparent */
   backdrop-filter: blur(55px);
   overflow-x: hidden;
