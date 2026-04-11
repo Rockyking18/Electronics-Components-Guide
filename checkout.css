@@ -1,10 +1,9 @@
-
 /* ── BACKGROUND ── */
 body {
   position: relative;
   background: #0a0c0f;
-  color:black;
-  font-family:'Times New Roman', Times, serif;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
 }
 
 body::before {
@@ -46,10 +45,10 @@ nav {
 
 .progress-step {
   font-size: 0.7rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color:white;
+  color: white;
   padding: 0.3rem 0.8rem;
   border: 1px solid transparent;
   border-radius: 2px;
@@ -80,11 +79,11 @@ nav {
 
 /* ── FORM SECTION ── */
 .checkout-form-section h2 {
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0 0 1.25rem 0;
-  color:white;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-bottom: 0.6rem;
@@ -97,8 +96,8 @@ nav {
 
 .form-label {
   font-size: 0.8rem;
-  font-family:'Times New Roman', Times, serif;
-  color:white;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: block;
@@ -129,8 +128,8 @@ nav {
   border-color: var(--cyan);
   box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.1);
 }
-.ship{
-  margin-top:2.5rem
+.ship {
+  margin-top: 2.5rem;
 }
 .form-row {
   display: grid;
@@ -276,102 +275,146 @@ nav {
 
 /* ── ORDER SUMMARY ── */
 .order-summary {
-  background: rgba(10, 12, 15, 0.7);
+  background: rgba(56, 52, 47, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2rem 1.6rem 1.8rem;
   height: fit-content;
   position: sticky;
   top: 80px;
 }
 
 .order-summary h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--cyan);
+  color: rgba(255, 255, 255, 0.95);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  letter-spacing: 1px;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.summary-lines {
+  margin-bottom: 2.6rem;
 }
 
 .order-line {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.85rem;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid var(--border);
+  font-size: 1.1rem;
+  padding: 0.9rem 0.1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 
 .order-line .name {
-  color: var(--muted);
+  flex: 1;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .order-line .amount {
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-weight: 600;
+  min-width: 7.25rem;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 
-.order-total {
+.summary-subtotal-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
-  padding: 1rem 0 0 0;
-  margin-top: 1rem;
-  border-top: 2px solid var(--border);
+  margin-top: 0.2rem;
 }
 
-.order-total span {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--muted);
+.summary-subtotal-row span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.42);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.order-total strong {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  color: var(--white);
+.summary-subtotal-row strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
 }
 
-.summary-section {
-  padding: 1rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  margin-top: 0.75rem;
-  padding: 0.75rem;
+.summary-shipping-card {
+  margin-top: 1.2rem;
+  background: rgba(12, 12, 12, 0.92);
+  border-radius: 2px;
+  padding: 0.75rem 1rem 1rem;
 }
 
-.summary-section.highlight {
-  background: rgba(0, 230, 118, 0.05);
-  border-color: rgba(0, 230, 118, 0.2);
+.shipping-heading {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
 }
 
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--muted);
+.shipping-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shipping-service {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.shipping-time {
+  margin-top: 0.15rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.shipping-amount {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.summary-total-row {
+  margin-top: 1.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-total-row span {
+  color: #2ea335;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 0.3rem;
 }
 
-.summary-section.highlight .section-label {
-  color: var(--success);
-}
-
-.section-value {
-  font-size: 0.8rem;
-  color: var(--muted);
+.summary-total-row strong {
+  color: #39ff33;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 600;
 }
 
 /* ── RESPONSIVE ── */
@@ -389,6 +432,35 @@ nav {
 @media (max-width: 768px) {
   .checkout-layout {
     padding: 7rem 1.5rem 2rem;
+  }
+
+  .order-summary h3,
+  .summary-subtotal-row span,
+  .summary-subtotal-row strong,
+  .shipping-amount,
+  .summary-total-row span,
+  .summary-total-row strong {
+    font-size: 1.4rem;
+  }
+
+  .shipping-heading {
+    font-size: 1.15rem;
+  }
+
+  .shipping-service {
+    font-size: 1rem;
+  }
+
+  .shipping-time {
+    font-size: 0.8rem;
+  }
+
+  .order-line {
+    font-size: 0.9rem;
+  }
+
+  .order-line .amount {
+    font-size: 0.95rem;
   }
 
   .form-row {

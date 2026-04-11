@@ -1,248 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="checkout.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo">ECG<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <a href="shop.html" class="nav-cart-btn">Back to Shop</a>
+    </nav>
 
-<nav>
-  <a href="index.html" class="nav-logo">ECG<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="explore.html">Explore</a></li>
-    <li><a href="shop.html">Shop</a></li>
-  </ul>
-  <a href="shop.html" class="nav-cart-btn">Back to Shop</a>
-</nav>
-
-<div class="checkout-layout">
-
-  <!-- ── LEFT: FORM ── -->
-  <div class="checkout-form-section">
-
-    <!-- Progress Steps -->
-    <div class="checkout-progress">
-      <span class="progress-step active">Contact</span>
-      <span class="progress-step">Shipping</span>
-      <span class="progress-step">Payment</span>
-    </div>
-
-    <!-- Contact Section -->
-    <h2>Contact Information</h2>
-    <div class="form-group">
-      <label class="form-label">Email Address</label>
-      <input type="email" class="form-input" placeholder="your.email@example.com" />
-    </div>
-    <div class="form-group">
-      <label class="form-label">Phone Number</label>
-      <input type="tel" class="form-input" placeholder="+233 20 123 4567" />
-    </div>
-
-    <!-- Shipping Address Section -->
-    <h2 class="ship">Shipping Address</h2>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">First Name</label>
-        <input type="text" class="form-input" placeholder="John" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Last Name</label>
-        <input type="text" class="form-input" placeholder="Smith" />
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Address</label>
-      <input type="text" class="form-input" placeholder="123 Main Street" />
-    </div>
-    <div class="form-group">
-      <label class="form-label">Apartment, suite, etc. (optional)</label>
-      <input type="text" class="form-input" placeholder="Apt 4B" />
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">City</label>
-        <input type="text" class="form-input" placeholder="Accra" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">Region</label>
-        <select class="form-input">
-          <option>Greater Accra</option>
-          <option>Ashanti</option>
-          <option>Western</option>
-          <option>Eastern</option>
-          <option>Central</option>
-          <option>Volta</option>
-          <option>Northern</option>
-          <option>Upper East</option>
-          <option>Upper West</option>
-          <option>Brong-Ahafo</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Shipping Method Section -->
-    <h2>Shipping Method</h2>
-    <div class="shipping-options">
-      <label class="shipping-option selected">
-        <input type="radio" name="shipping" checked />
-        <div class="option-content">
-          <div class="option-name">Standard Delivery</div>
-          <div class="option-desc">3–5 business days</div>
+    <div class="checkout-layout">
+      <!-- ── LEFT: FORM ── -->
+      <div class="checkout-form-section">
+        <!-- Progress Steps -->
+        <div class="checkout-progress">
+          <span class="progress-step active">Contact</span>
+          <span class="progress-step">Shipping</span>
+          <span class="progress-step">Payment</span>
         </div>
-        <span class="option-price">GHS 15</span>
-      </label>
 
-      <label class="shipping-option">
-        <input type="radio" name="shipping" />
-        <div class="option-content">
-          <div class="option-name">Express Delivery</div>
-          <div class="option-desc">1–2 business days</div>
-        </div>
-        <span class="option-price">GHS 40</span>
-      </label>
-
-      <label class="shipping-option">
-        <input type="radio" name="shipping" />
-        <div class="option-content">
-          <div class="option-name">Pickup In-Store</div>
-          <div class="option-desc">Ready in 2 hours</div>
-        </div>
-        <span class="option-price free">FREE</span>
-      </label>
-    </div>
-
-    <!-- Payment Section -->
-    <h2 style="margin-top:2.5rem;">Payment Method</h2>
-    <div class="payment-tabs">
-      <button class="payment-tab active" data-method="card">Card</button>
-      <button class="payment-tab" data-method="mobile">Mobile Money</button>
-      <button class="payment-tab" data-method="bank">Bank Transfer</button>
-    </div>
-
-    <div id="cardPayment" class="payment-method">
-      <div class="form-group">
-        <label class="form-label">Card Number</label>
-        <input type="text" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19" id="cardNum" />
-      </div>
-      <div class="form-row">
+        <!-- Contact Section -->
+        <h2>Contact Information</h2>
         <div class="form-group">
-          <label class="form-label">Expiry Date</label>
-          <input type="text" class="form-input" placeholder="MM / YY" maxlength="7" />
+          <label class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-input"
+            placeholder="your.email@example.com"
+          />
         </div>
         <div class="form-group">
-          <label class="form-label">CVV</label>
-          <input type="text" class="form-input" placeholder="123" maxlength="4" />
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="+233 20 123 4567" />
+        </div>
+
+        <!-- Shipping Address Section -->
+        <h2 class="ship">Shipping Address</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Smith" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Address</label>
+          <input type="text" class="form-input" placeholder="123 Main Street" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Apartment, suite, etc. (optional)</label>
+          <input type="text" class="form-input" placeholder="Apt 4B" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">City</label>
+            <input type="text" class="form-input" placeholder="Accra" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Region</label>
+            <select class="form-input">
+              <option>Greater Accra</option>
+              <option>Ashanti</option>
+              <option>Western</option>
+              <option>Eastern</option>
+              <option>Central</option>
+              <option>Volta</option>
+              <option>Northern</option>
+              <option>Upper East</option>
+              <option>Upper West</option>
+              <option>Brong-Ahafo</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Shipping Method Section -->
+        <h2>Shipping Method</h2>
+        <div class="shipping-options">
+          <label class="shipping-option selected">
+            <input type="radio" name="shipping" checked />
+            <div class="option-content">
+              <div class="option-name">Standard Delivery</div>
+              <div class="option-desc">3–5 business days</div>
+            </div>
+            <span class="option-price">GHS 15</span>
+          </label>
+
+          <label class="shipping-option">
+            <input type="radio" name="shipping" />
+            <div class="option-content">
+              <div class="option-name">Express Delivery</div>
+              <div class="option-desc">1–2 business days</div>
+            </div>
+            <span class="option-price">GHS 40</span>
+          </label>
+
+          <label class="shipping-option">
+            <input type="radio" name="shipping" />
+            <div class="option-content">
+              <div class="option-name">Pickup In-Store</div>
+              <div class="option-desc">Ready in 2 hours</div>
+            </div>
+            <span class="option-price free">FREE</span>
+          </label>
+        </div>
+
+        <!-- Payment Section -->
+        <h2 style="margin-top: 2.5rem">Payment Method</h2>
+        <div class="payment-tabs">
+          <button class="payment-tab active" data-method="card">Card</button>
+          <button class="payment-tab" data-method="mobile">Mobile Money</button>
+          <button class="payment-tab" data-method="bank">Bank Transfer</button>
+        </div>
+
+        <div id="cardPayment" class="payment-method">
+          <div class="form-group">
+            <label class="form-label">Card Number</label>
+            <input
+              type="text"
+              class="form-input"
+              placeholder="1234 5678 9012 3456"
+              maxlength="19"
+              id="cardNum"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Expiry Date</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="MM / YY"
+                maxlength="7"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="123"
+                maxlength="4"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Name on Card</label>
+            <input type="text" class="form-input" placeholder="John Smith" />
+          </div>
+        </div>
+
+        <!-- Promo Code -->
+        <div class="promo-section">
+          <input type="text" class="form-input" placeholder="Promo code" />
+          <button class="btn-apply">Apply</button>
+        </div>
+
+        <button class="checkout-btn" onclick="placeOrder()" style="width: 100%">
+          Place Order — <span id="finalTotal">GHC 0</span>
+        </button>
+
+        <p class="security-note">Your payment is secure and encrypted</p>
+      </div>
+
+      <!-- ── RIGHT: ORDER SUMMARY ── -->
+      <div class="order-summary">
+        <h3>ORDER SUMMARY</h3>
+        <div id="orderLines" class="summary-lines"></div>
+
+        <div class="summary-subtotal-row">
+          <span>SUBTOTAL</span>
+          <strong id="summaryTotal">GHC 0</strong>
+        </div>
+
+        <div class="summary-shipping-card">
+          <div class="shipping-heading">SHIPPING</div>
+          <div class="shipping-card-row">
+            <div>
+              <div class="shipping-service">EXPRESS DELIVERY</div>
+              <div class="shipping-time">1-2 business days</div>
+            </div>
+            <div class="shipping-amount" id="summaryShippingAmount">GHC 70</div>
+          </div>
+        </div>
+
+        <div class="summary-total-row">
+          <span>TOTAL</span>
+          <strong id="grandTotal">GHC 0</strong>
         </div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Name on Card</label>
-        <input type="text" class="form-input" placeholder="John Smith" />
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="footer-logo">ECG<span>.</span></div>
+      <div
+        style="
+          font-family: var(--font-mono);
+          font-size: 0.7rem;
+          color: var(--muted);
+          letter-spacing: 0.5px;
+        "
+      >
+        Secure Checkout
       </div>
-    </div>
+    </footer>
 
-    <!-- Promo Code -->
-    <div class="promo-section">
-      <input type="text" class="form-input" placeholder="Promo code" />
-      <button class="btn-apply">Apply</button>
-    </div>
+    <script>
+      const cart = JSON.parse(localStorage.getItem("ecg-cart") || "[]");
 
-    <button class="checkout-btn" onclick="placeOrder()" style="width:100%;">
-      Place Order — <span id="finalTotal">GHS 0</span>
-    </button>
+      function renderOrder() {
+        const lines = document.getElementById("orderLines");
+        const shippingFee = 70;
+        let subtotal = 0;
 
-    <p class="security-note">
-      Your payment is secure and encrypted
-    </p>
-
-  </div>
-
-  <!-- ── RIGHT: ORDER SUMMARY ── -->
-  <div class="order-summary">
-    <h3>Order Summary</h3>
-    <div id="orderLines"></div>
-    <div class="order-total">
-      <span>Subtotal</span>
-      <strong id="summaryTotal">GHS 0</strong>
-    </div>
-    <div class="summary-section">
-      <div class="section-label">Shipping</div>
-      <div class="section-value">Calculated at next step</div>
-    </div>
-    <div class="summary-section highlight">
-      <div class="section-label">Free Returns</div>
-      <div class="section-value">30-day policy</div>
-    </div>
-  </div>
-
-</div>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-logo">ECG<span>.</span></div>
-  <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--muted);letter-spacing:0.5px;">
-    Secure Checkout
-  </div>
-</footer>
-
-<script>
-  const cart = JSON.parse(localStorage.getItem('ecg-cart') || '[]');
-
-  function renderOrder() {
-    const lines = document.getElementById('orderLines');
-    let subtotal = 0;
-
-    if (cart.length === 0) {
-      lines.innerHTML = '<p style="font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">No items in cart. <a href="shop.html" style="color:var(--cyan);">Go shop →</a></p>';
-    } else {
-      lines.innerHTML = cart.map(item => {
-        subtotal += item.price * item.qty;
-        return `
+        if (cart.length === 0) {
+          lines.innerHTML =
+            '<p style="font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">No items in cart. <a href="shop.html" style="color:var(--cyan);">Go shop →</a></p>';
+        } else {
+          lines.innerHTML = cart
+            .map((item) => {
+              subtotal += item.price * item.qty;
+              const lineName =
+                item.qty > 1 ? `${item.name} x ${item.qty}` : item.name;
+              return `
           <div class="order-line">
-            <span class="name">${item.name} × ${item.qty}</span>
-            <span class="amount">GHS ${item.price * item.qty}</span>
+            <span class="name">${lineName}</span>
+            <span class="amount">GHC ${item.price * item.qty}</span>
           </div>`;
-      }).join('');
-    }
+            })
+            .join("");
+        }
 
-    document.getElementById('summaryTotal').textContent = `GHS ${subtotal}`;
-    document.getElementById('finalTotal').textContent = `GHS ${subtotal + 15}`;
-  }
+        document.getElementById("summaryTotal").textContent = `GHC ${subtotal}`;
+        document.getElementById("summaryShippingAmount").textContent =
+          `GHC ${shippingFee}`;
+        document.getElementById("grandTotal").textContent =
+          `GHC ${subtotal + shippingFee}`;
+        document.getElementById("finalTotal").textContent =
+          `GHC ${subtotal + shippingFee}`;
+      }
 
-  function placeOrder() {
-    alert('Order placed! Thank you for shopping with us.');
-    localStorage.removeItem('ecg-cart');
-    window.location.href = 'index.html';
-  }
+      function placeOrder() {
+        alert("Order placed! Thank you for shopping with us.");
+        localStorage.removeItem("ecg-cart");
+        window.location.href = "index.html";
+      }
 
-  // Card number formatting
-  document.getElementById('cardNum')?.addEventListener('input', function() {
-    this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
-  });
+      // Card number formatting
+      document
+        .getElementById("cardNum")
+        ?.addEventListener("input", function () {
+          this.value = this.value
+            .replace(/\D/g, "")
+            .replace(/(\d{4})(?=\d)/g, "$1 ");
+        });
 
-  // Payment method tabs
-  document.querySelectorAll('.payment-tab').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.payment-tab').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-
-  // Shipping option selection
-  document.querySelectorAll('input[name="shipping"]').forEach(radio => {
-    radio.addEventListener('change', function() {
-      document.querySelectorAll('.shipping-option').forEach(opt => {
-        opt.classList.remove('selected');
+      // Payment method tabs
+      document.querySelectorAll(".payment-tab").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".payment-tab")
+            .forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+        });
       });
-      this.closest('.shipping-option').classList.add('selected');
-    });
-  });
 
-  // Initialize
-  renderOrder();
-</script>
-</body>
+      // Shipping option selection
+      document.querySelectorAll('input[name="shipping"]').forEach((radio) => {
+        radio.addEventListener("change", function () {
+          document.querySelectorAll(".shipping-option").forEach((opt) => {
+            opt.classList.remove("selected");
+          });
+          this.closest(".shipping-option").classList.add("selected");
+        });
+      });
+
+      // Initialize
+      renderOrder();
+    </script>
+  </body>
 </html>
