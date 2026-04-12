@@ -386,13 +386,17 @@ nav {
 }
 
 .exp-foot {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
   background: white;
   padding: 2rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: 0;
 }
 /*Bottom*/
 .bottom-nav {
